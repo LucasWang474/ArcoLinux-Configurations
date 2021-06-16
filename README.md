@@ -274,6 +274,7 @@ GFW list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 ![image-20210616225251440](README.assets/image-20210616225251440.png)
 
 <hr>
+
 **到此为止，基本的环境搭建已经完成了，后面的配置都是个人喜好问题了。**
 
 **本文后面的是软件推荐，更多的系统层次的配置可以看 [Configurations.md](Configurations.md)**。
