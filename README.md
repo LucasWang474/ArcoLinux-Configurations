@@ -199,8 +199,8 @@ sudo pacman -S visual-studio-code-bin
 ![image-20210616224342729](README.assets/image-20210616224342729.png)
 
 <hr>
-### 安装浏览器
 
+### 安装浏览器
 
 ```bash
 sudo pacman -S google-chrome
