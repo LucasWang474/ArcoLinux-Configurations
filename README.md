@@ -313,6 +313,22 @@ mkdir ~/Downloads/XunleiDownloads # 然后在迅雷中设置默认下载位置
 
 <hr>
 
+### 解压缩
+
+对于在中文环境下使用 zip 压缩的文件，在 Linux 下解压可能会出现乱码的情况。下面介绍解决方案，更多请参考[官方文档](https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#zip_%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B9%B1%E7%A0%81)。
+
+```bash
+yay -S unzip-iconv
+
+# 然后使用下面这条指令来解压
+unzip -O gbk ARCHIVE_NAME.zip
+
+# 可以将它设置为 fish abbr
+abbr unzipgbk 'unzip -O gbk'
+```
+
+<hr>
+
 ### 播放器
 
 ```bash
