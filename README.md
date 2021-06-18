@@ -207,6 +207,11 @@ sudo pacman -S google-chrome
 ```
 
 <hr>
+### 文件浏览器
+
+已经预装好了 Thunar 文件浏览器，使用 Win+Shift+Enter 打开。
+
+<hr>
 
 ### 安装网络代理软件
 
