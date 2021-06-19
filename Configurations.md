@@ -55,6 +55,8 @@ sudo systemctl enable tlp
 sudo systemctl enable --now fstrim.timer
 ```
 
+<hr>
+
 <br>
 
 <br>
@@ -361,4 +363,57 @@ sudo pacman -S ant-dracula-gtk-theme dracula-gtk-theme ant-dracula-kvantum-theme
 > #### Activating theme
 >
 > 1. Put `Dracula.theme` in `~/.local/share/xfce4/terminal/colorschemes`
+
+
+
+
+
+
+
+
+
+# KVM
+
+经过一番折腾，并没有发现 KVM 有多明显的性能提升，反而不能或很难设置一些效率工具，例如共享文件夹、共享复制剪切板、拖拽文件、自动适应窗口等。因此，KVM 方面的折腾暂时只能作罢了。
+
+
+
+> - [KVM - ArchWiki](https://wiki.archlinux.org/title/KVM)
+> - [QEMU - ArchWiki](https://wiki.archlinux.org/title/QEMU)
+> - [libvirt - ArchWiki](https://wiki.archlinux.org/title/Libvirt)
+> - [Cockpit - ArchWiki](https://wiki.archlinux.org/title/Cockpit)
+
+```bash
+# KVM: 嵌入内核的虚拟机
+# QEMU 也是一种虚拟机，但是它也可以使用其它的虚拟机，如 KVM
+sudo pacman -S qemu
+
+# Graphical front-ends for QEMU
+# 由于 QEMU 没有自带图形化界面，我们需要使用一个图形化虚拟机管理器，例如 libvirt
+# 所以 QEMU 是后端，libvirt 是前端
+# 除此之外，libvirt 还分为 server 和 client
+
+# 1. libvirt server
+sudo pacman -S libvirt 
+sudo pacman -S iptables-nft dnsmasq dnsmasq-china-list-git # for the default NAT/DHCP networking
+sudo pacman -S bridge-utils # for bridged networking
+sudo pacman -S openbsd-netcat # for remote management over SSH
+sudo systemctl enable --now libvirtd.service
+sudo systemctl enable --now virtlogd.service
+
+# 2. libvirt client
+# client 部分（图形化操作）对的选项很多，这里使用 cockpit 和 virt-manager
+    # 2.1 cockpit
+    sudo pacman -S cockpit cockpit-machines cockpit-pcp
+    sudo pacman -S packagekit
+    sudo pacman -S virt-viewer
+    sudo systemctl enable --now cockpit.socket
+    sudo systemctl enable --now pmcd.service
+    sudo systemctl enable --now pmlogger.service
+    # 然后打开 https://localhost:9090/ 即可访问
+    
+    # 2.2 virt-manager
+    sudo pacman -S virt-manager
+    # 然后通过运行 virt-manager 命令即可打开
+```
 
