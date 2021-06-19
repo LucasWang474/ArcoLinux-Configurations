@@ -450,49 +450,6 @@ sudo pacman -S gnome-clocks
 ```
 
 <hr>
-
-### Vmware
-
-**First install vmware,**
-
-```bash
-sudo pacman -S vmware-workstation
-```
-
-**Then,** as desired, enable some of the following services:
-
-- `vmware-networks.service` for guest network access
-
-  ```bash
-  sudo systemctl enable --now vmware-networks.service
-  ```
-
-- `vmware-usbarbitrator.service` for connecting USB devices to guest
-
-  ```bash
-  sudo systemctl enable --now vmware-usbarbitrator.service
-  ```
-
-**And** load the VMware modules:
-
-```bash
-sudo modprobe -a vmw_vmci vmmon
-```
-
-**Lastly,** entering the Workstation Pro license key from a terminal:
-
-```bash
-sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn ZF3R0-FHED2-M80TY-8QYGC-NPKYF
-```
-
-**16.0 License Key**
-
-```bash
-ZF3R0-FHED2-M80TY-8QYGC-NPKYF
-YF390-0HF8P-M81RQ-2DXQE-M2UT6
-ZF71R-DMX85-08DQY-8YMNC-PPHV8
-```
-
 <br>
 
 <br>

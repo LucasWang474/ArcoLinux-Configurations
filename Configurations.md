@@ -370,9 +370,92 @@ sudo pacman -S ant-dracula-gtk-theme dracula-gtk-theme ant-dracula-kvantum-theme
 
 
 
+# Hypervisors
 
+## Vmware
 
-# KVM
+**First install vmware,**
+
+```bash
+sudo pacman -S vmware-workstation
+```
+
+**Then,** as desired, enable some of the following services:
+
+- `vmware-networks.service` for guest network access
+
+  ```bash
+  sudo systemctl enable --now vmware-networks.service
+  ```
+
+- `vmware-usbarbitrator.service` for connecting USB devices to guest
+
+  ```bash
+  sudo systemctl enable --now vmware-usbarbitrator.service
+  ```
+
+**And** load the VMware modules:
+
+```bash
+sudo modprobe -a vmw_vmci vmmon
+```
+
+**Lastly,** entering the Workstation Pro license key from a terminal:
+
+```bash
+sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+```
+
+**16.0 License Key**
+
+```bash
+ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+```
+
+<hr>
+
+### Tips
+
+#### [Enable 3D graphics](https://wiki.archlinux.org/title/VMware#Enable_3D_graphics_on_Intel_and_Optimus)
+
+```bash
+echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/.vmware/preferences
+echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/vmware/VIRTUAL_MACHINE_NAME.vmx
+```
+
+#### [Disable transparent hugepages](https://wiki.archlinux.org/title/VMware#Disable_transparent_hugepages)
+
+If you notice the guest and/or the host frequently freezing when running a VM, you may want to disable transparent hugepages. To disable them for the current session, run (on the host):
+
+```bash
+sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
+```
+
+To make the change persistent across boots, add the [kernel parameter](https://wiki.archlinux.org/title/Kernel_parameter) `transparent_hugepage=never`.
+
+#### [Virtual machine settings](https://wiki.archlinux.org/title/VMware#Virtual_machine_settings)
+
+```bash
+vim .vmware/preferences
+```
+
+```bash
+mainmem.backing = "swap" 
+MemTrimRate = "0"
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+MemAllowAutoScaleDown = "FALSE"
+sched.mem.pshare.enable = "FALSE"
+
+prefvmx.minVmMemPct = "100"
+mainMem.partialLazySave = "FALSE"
+mainMem.partialLazyRestore = "FALSE"
+```
+
+<hr>
+
+## KVM
 
 经过一番折腾，并没有发现 KVM 有多明显的性能提升，反而不能或很难设置一些效率工具，例如共享文件夹、共享复制剪切板、拖拽文件、自动适应窗口等。因此，KVM 方面的折腾暂时只能作罢了。
 
