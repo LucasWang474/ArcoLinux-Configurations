@@ -415,8 +415,11 @@ ZF71R-DMX85-08DQY-8YMNC-PPHV8
 ```
 
 <hr>
-
 ### Tips
+
+#### CPU
+
+有多少设多少，直接拉满，反正 CPU 是共享的。
 
 #### [Enable 3D graphics](https://wiki.archlinux.org/title/VMware#Enable_3D_graphics_on_Intel_and_Optimus)
 
