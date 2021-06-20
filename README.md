@@ -101,6 +101,14 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 5%-
 
 然后重启 i3。试试笔记本的亮度调节按键。
 
+<br>
+
+除了 brightnessctl 之外，xfce4-power-manager 也可以调节亮度。打开 xfce4-power-manager-settings:
+
+![image-20210620134819399](README.assets/image-20210620134819399.png)
+
+此处 step count 指的是除数，即 100 / (step count)。比如我这里设置了 20，那么我没按一次亮度键，它都会增加或者减少 5% 的亮度。
+
 <hr>
 
 ### 更新系统
@@ -286,7 +294,7 @@ GFW list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 除此之外，还可以参考我的 https://github.com/LucasWang474/Dotfiles。**<u>*（可以试试新装一个系统，然后直接把它复制且替换到 $HOME/ 下，然后看看效果）*</u>**
 
-小提示：你可以使用 xfce4-appfinder 查看已安装的软件。快捷键是 Alt+F3。
+小提示：你可以使用 xfce4-appfinder 查看已安装的软件，学习学习 ArcoLinux 官方是如何配置系统的，这东西非常有用。快捷键是 Alt+F3。
 
 <hr>
 
@@ -450,6 +458,15 @@ sudo pacman -S gnome-clocks
 ```
 
 <hr>
+
+### 通讯
+
+```bash
+sudo pacman -S telegram-desktop
+```
+
+
+
 <br>
 
 <br>
@@ -546,6 +563,15 @@ sudo archlinux-java set java-X-openjdk
 
 <hr>
 
+#### jshell
+
+```bash
+sudo ln -s /usr/lib/jvm/java-11-openjdk/bin/jshell /usr/bin/jshell
+jshell
+```
+
+<hr>
+
 ### Python
 
 ```bash
@@ -553,4 +579,14 @@ sudo pacman -S python python-pip
 sudo pacman -S ipython jupyter-notebook
 sudo pacman -S pycharm-community-edition
 ```
+
+<hr>
+
+### VSCode
+
+```bash
+yay -S visual-studio-code-bin
+```
+
+
 
