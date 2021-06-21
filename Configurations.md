@@ -503,3 +503,64 @@ sudo systemctl enable --now virtlogd.service
     # 然后通过运行 virt-manager 命令即可打开
 ```
 
+<br>
+
+<br>
+
+<br>
+
+<hr>
+
+# [youtube-dl](https://wiki.archlinux.org/title/Youtube-dl)
+
+```bash
+sudo pacman -S youtube-dl ffmpeg
+```
+
+## Configuration
+
+```bash
+vim ~/.config/youtube-dl/config
+```
+
+```bash'
+--ignore-errors
+# --no-playlist
+
+# Save in ~/Videos
+-o ~/Videos/%(title)s.%(ext)s
+
+# Prefer 1080p or lower resolutions
+-f bestvideo[ext=mp4][width<2000][height<=1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][width<2000][height<=1200]+bestaudio[ext=webm]/bestvideo[width<2000][height<=1200]+bestaudio/best[width<2000][height<=1200]/best
+```
+
+## Commands
+
+```bash
+# 直接下载
+youtube-dl URL
+
+# 只下载音频
+youtube-dl -x -f bestaudio URL
+
+# 列出所有可用字幕
+youtube-dl --list-subs URL
+
+# 下载所有字幕
+youtube-dl --all-subs --skip-download URL
+
+# 下载特定字幕
+youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
+```
+
+## Subtitle Options
+
+```bash
+--write-sub                      Write subtitle file
+--write-auto-sub                 Write automatic subtitle file (YouTube only)
+--all-subs                       Download all the available subtitles of the video
+--list-subs                      List all available subtitles for the video
+--sub-format FORMAT              Subtitle format, accepts formats preference, for example: "srt" or "ass/srt/best"
+--sub-lang LANGS                 Languages of the subtitles to download (optional) separated by commas, use IETF language tags like 'en,pt'
+```
+
