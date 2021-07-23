@@ -564,3 +564,21 @@ youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
 --sub-lang LANGS                 Languages of the subtitles to download (optional) separated by commas, use IETF language tags like 'en,pt'
 ```
 
+<br>
+
+<br>
+
+<br>
+
+<hr>
+
+# 文件格式转换: pandoc
+```bash
+sudo pacman -S pandoc pandoc-crossref 
+
+# pdf 输出
+sudo pacman -S texlive-core
+```
+
+
+

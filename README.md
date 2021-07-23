@@ -386,6 +386,13 @@ sudo pacman -S typora
 ```
 
 <hr>
+### Office
+
+```bash
+sudo pacman -S libreoffice-fresh
+```
+
+<hr>
 
 ### 思维导图
 
