@@ -4,9 +4,9 @@
 
 ### 安装 fish
 
-生活苦短，我用 fish。
+人生太短，我用 fish。
 
-`Mod+Enter` 打开终端。（Mod 指 Windows 键）
+`Mod+Enter` 打开终端。（Mod 指 Windows 键，以下不再赘述）
 
 ```bash
 sudo pacman -Syy fish
@@ -19,7 +19,7 @@ chsh -s /bin/fish # 更换当前用户默认的 shell 为 fish
 
 ### 使用 Xfce4-terminal
 
-目前 Arcolinux 默认使用的是 terminal 终端，但它使用起来依然不是很无脑，因此我推荐使用已经预装好的 Xfce4-terminal。
+目前 Arcolinux 默认使用的是 terminal 终端，但它使用起来依然不够无脑，因此我推荐使用已经预装好的 Xfce4-terminal。
 
 首先打开 i3 config 文件。
 
@@ -78,7 +78,19 @@ bindsym $mod+d exec --no-startup-id rofi -show run -font "Noto Sans 13"
 
 ### 设置亮度
 
-有些机器亮度不是开箱即用的，下面使用 brightnessctl 来调节亮度。
+有些机器亮度不是开箱即用的，下面介绍两种设置方法。
+
+#### 通过 xfce4-power-manager-settings
+
+使用 rofi 打开 xfce4-power-manager-settings，然后选上 Handle display brightness keys。
+
+step count 指的是除数，即 100 / (step count)。比如我这里设置了 20，那么我没按一次亮度键，它都会增加或者减少 5% 的亮度。
+
+<img src="README.assets/image-20210620134819399.png" alt="image-20210620134819399" style="zoom:150%;" />
+
+然后再试一下笔记本的亮度功能键。
+
+#### 通过 brightnessctl
 
 ```bash
 sudo pacman -Syy brightnessctl
@@ -102,12 +114,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 5%-
 然后重启 i3。试试笔记本的亮度调节按键。
 
 <br>
-
-除了 brightnessctl 之外，xfce4-power-manager 也可以调节亮度。打开 xfce4-power-manager-settings:
-
-![image-20210620134819399](README.assets/image-20210620134819399.png)
-
-此处 step count 指的是除数，即 100 / (step count)。比如我这里设置了 20，那么我没按一次亮度键，它都会增加或者减少 5% 的亮度。
 
 <hr>
 
@@ -157,18 +163,21 @@ reboot
 如果在关机界面卡死了，直接断电就行了。关于这方面的配置可以看我的 [Configurations.md](Configurations.md)。
 
 <hr>
+### 安装拼音输入法
 
-### 安装搜狗输入法
+>  推荐看这个 wiki：[Fcitx5 (简体中文)](https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))。
+
+没必要装 bug 满满的搜狗输入法，现在 fcitx5 带的 fcitx5-chinese-addons 已经很好用了。
 
 ```bash
-yay -S fcitx-im fcitx-configtool fcitx-sogoupinyin fcitx-qt5 fcitx-qt4
+sudo pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-zhwiki
 ```
 
-在 i3 config 中设置 fcitx 自启动：
+在 i3 config 中设置 fcitx5 自启动：
 
 ```bash
 # Input method
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 ```
 
 设置输入法的环境变量：
@@ -183,16 +192,27 @@ vim ~/.xprofile
 ```bash
 # 加入以下三行
 
-export XMODIFIERS=@im=fcitx
-export QT_IM_MODULE=fcitx
-export GTK_IM_MODULE=fcitx
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE  DEFAULT=fcitx
+XMODIFIERS    DEFAULT=@im=fcitx
+INPUT_METHOD  DEFAULT=fcit
 ```
 
-然后打开 fcitx-configtool，在 Input Method 中添加 sogoupinyin。
+然后打开 fcitx5-configtool，在 Input Method 中添加 pinyin。
 
-![image-20210616221727216](README.assets/image-20210616221727216.png)
+![image-20210802190025744](README.assets/image-20210802190025744.png)
 
-然后重启或者重新登录，之后按 Shift 键打开输入法（假设你已经按照我说的设定了自启动）。
+然后重启或者重新登录，之后按 Shift 或 Ctrl + Space 打开输入法（假设你已经按照我说的设定了自启动）。
+
+<br>
+
+其它的设置可以看 fcitx5-configtool 里面的 Addons 一页，里面有很多好用的 Addon。
+
+例如：
+
+- Clipboard
+- Cloud Pinyin
+- Pinyin （在这里设置候选栏数目才会生效）
 
 <hr>
 
@@ -215,9 +235,10 @@ sudo pacman -S google-chrome
 ```
 
 <hr>
+
 ### 文件浏览器
 
-已经预装好了 Thunar 文件浏览器，使用 Win+Shift+Enter 打开。
+已经预装好了 Thunar 文件浏览器，使用 Mod+Shift+Enter 打开。
 
 <hr>
 
@@ -247,8 +268,10 @@ vim ~/.config/qv2ray/init.sh
 ```bash
 #!/bin/bash
 
-killall v2ray
 killall qv2ray
+killall v2ray
+kill qv2ray
+kill v2ray
 sleep 2
 exec qv2ray
 ```
@@ -348,7 +371,7 @@ abbr unzipgbk 'unzip -O gbk'
 # mpv 其实非常好用，可能是 linux 下最好用的播放器了
 sudo pacman -S mpv
 
-sudo pacman -S netease-cloud-music
+sudo pacman -S netease-cloud-music-imfix # 可以使用输入法版本
 ```
 
 **小技巧：netease-cloud-music 设置缩放**
@@ -368,8 +391,10 @@ export QT_SCALE_FACTOR=1.4
 #### 阅读器
 
 ```bash
-sudo pacman -S okular
+sudo pacman -S okular # 建议自己设置快捷键，
 ```
+
+![image-20210802190959620](README.assets/image-20210802190959620.png)
 
 #### 编辑器
 
@@ -386,7 +411,9 @@ sudo pacman -S typora
 ```
 
 <hr>
+
 ### Office
+
 
 ```bash
 sudo pacman -S libreoffice-fresh
@@ -545,14 +572,18 @@ git config --global credential.helper store # 保存账号密码
 
 <hr>
 
-### Java
+### Jetbrains
 
 ```bash
 sudo pacman -S jdk8-openjdk openjdk8-doc
 sudo pacman -S jdk11-openjdk openjdk11-doc
+sudo pacman -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
 
 sudo pacman -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
 sudo ln -s ~/.config/fish/fish_variables /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/fish_variables
+
+sudo pacman -S pycharm-professional
+sudo ln -s ~/.config/fish/fish_variables /opt/pycharm-professional/plugins/terminal/fish/fish_variables
 ```
 
 #### Intellij Plugins
@@ -565,8 +596,16 @@ sudo ln -s ~/.config/fish/fish_variables /opt/intellij-idea-ultimate-edition/plu
 
 ```bash
 sudo archlinux-java status
-sudo archlinux-java set java-X-openjdk
+sudo archlinux-java set java-11-openjdk
 ```
+
+#### 解决输入法位置 bug
+
+```bash
+sudo pacman -S jdk11-jetbrains-imfix
+```
+
+进入 pycharm 或 idea，安装 Choose Runtimes 插件。然后 Ctrl + Shift + A 搜索 Choose，选择 Choose Boot Java Run Time ...。
 
 <hr>
 
@@ -588,12 +627,3 @@ sudo pacman -S pycharm-community-edition
 ```
 
 <hr>
-
-### VSCode
-
-```bash
-yay -S visual-studio-code-bin
-```
-
-
-

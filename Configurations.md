@@ -510,14 +510,33 @@ sudo systemctl enable --now virtlogd.service
 <br>
 
 <hr>
+# 视频下载器
 
-# [youtube-dl](https://wiki.archlinux.org/title/Youtube-dl)
+## annie
+
+```bash
+sudo pacman -S annie
+```
+
+### Commands
+
+```bash
+annie -p BILIBILI_URL # 下载整个合集
+```
+
+<br>
+
+<br>
+
+<hr>
+
+## [youtube-dl](https://wiki.archlinux.org/title/Youtube-dl)
 
 ```bash
 sudo pacman -S youtube-dl ffmpeg
 ```
 
-## Configuration
+### Configuration
 
 ```bash
 vim ~/.config/youtube-dl/config
@@ -534,7 +553,7 @@ vim ~/.config/youtube-dl/config
 -f bestvideo[ext=mp4][width<2000][height<=1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][width<2000][height<=1200]+bestaudio[ext=webm]/bestvideo[width<2000][height<=1200]+bestaudio/best[width<2000][height<=1200]/best
 ```
 
-## Commands
+### Commands
 
 ```bash
 # 直接下载
@@ -553,7 +572,7 @@ youtube-dl --all-subs --skip-download URL
 youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
 ```
 
-## Subtitle Options
+### Subtitle Options
 
 ```bash
 --write-sub                      Write subtitle file
