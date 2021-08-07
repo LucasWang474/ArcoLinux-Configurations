@@ -372,6 +372,12 @@ abbr unzipgbk 'unzip -O gbk'
 sudo pacman -S mpv
 
 sudo pacman -S netease-cloud-music-imfix # 可以使用输入法版本
+# 可以从 ~/.cache/netease-cloud-music/CachedSongs 中偷歌
+
+# QQ, NeteaseClouseMusic, Kugou, Kuwo, Migu 等聚合版本
+# 优点：能免费听大部分歌，能同步各个平台的帐号及歌单
+# 缺点：不能下载，也不能从本地缓存中偷出来
+yay -S listen1-desktop-appimage 
 ```
 
 **小技巧：netease-cloud-music 设置缩放**
@@ -627,3 +633,4 @@ sudo pacman -S pycharm-community-edition
 ```
 
 <hr>
+
