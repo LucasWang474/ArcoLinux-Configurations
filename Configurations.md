@@ -457,6 +457,7 @@ mainMem.partialLazyRestore = "FALSE"
 ```
 
 <hr>
+# 视频下载工具
 
 ## KVM
 
@@ -522,6 +523,8 @@ sudo pacman -S annie
 
 ```bash
 annie -p BILIBILI_URL # 下载整个合集
+annie -i -p BILIBILI_URL # 获取下载信息
+annie -f 80 -p BILIBILI_URL # 以 1080p 下载
 ```
 
 <br>
@@ -599,5 +602,20 @@ sudo pacman -S pandoc pandoc-crossref
 sudo pacman -S texlive-core
 ```
 
+<br>
 
+<br>
 
+<br>
+
+<hr>
+
+# 最好用的 Linux 启动器：Ulauncher
+
+```bash
+yay -S ulauncher
+```
+
+**一些优化：**
+
+TODO
