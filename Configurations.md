@@ -12,35 +12,35 @@
   * [解决屏幕撕裂](#------)
   * [SDDM](#sddm)
   * [夜间模式](#----)
-  * [[Hardware video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration)](#-hardware-video-acceleration--https---wikiarchlinuxorg-title-hardware-video-acceleration-)
+  * [Hardware video acceleration](#hardware-video-acceleration)
   * [字体](#--)
-  * [[DPI](https://wiki.archlinux.org/title/HiDPI)](#-dpi--https---wikiarchlinuxorg-title-hidpi-)
+  * [DPI](#dpi)
   * [设置主题](#----)
-  * [[Dracula](https://draculatheme.com/) color theme](#-dracula--https---draculathemecom---color-theme)
-    + [[fish](https://draculatheme.com/fish)](#-fish--https---draculathemecom-fish-)
-    + [[JetBrains](https://draculatheme.com/jetbrains)](#-jetbrains--https---draculathemecom-jetbrains-)
-    + [[i3wm](https://draculatheme.com/i3)](#-i3wm--https---draculathemecom-i3-)
+  * [Dracula color theme](#dracula-color-theme)
+    + [fish](#fish)
+    + [JetBrains](#jetbrains)
+    + [i3wm](#i3wm)
       - [Install](#install)
       - [Activating the theme](#activating-the-theme)
     + [GTK and QT](#gtk-and-qt)
-    + [[Visual Studio Code](https://draculatheme.com/visual-studio-code)](#-visual-studio-code--https---draculathemecom-visual-studio-code-)
+    + [Visual Studio Code](#visual-studio-code)
       - [Install using Command Palette](#install-using-command-palette)
-    + [[Xfce4-terminal](https://draculatheme.com/xfce4-terminal)](#-xfce4-terminal--https---draculathemecom-xfce4-terminal-)
+    + [Xfce4-terminal](#xfce4-terminal)
       - [Install using Git](#install-using-git)
       - [Activating theme](#activating-theme)
 - [Hypervisors](#hypervisors)
   * [Vmware](#vmware)
     + [Tips](#tips)
       - [CPU](#cpu)
-      - [[Enable 3D graphics](https://wiki.archlinux.org/title/VMware#Enable_3D_graphics_on_Intel_and_Optimus)](#-enable-3d-graphics--https---wikiarchlinuxorg-title-vmware-enable-3d-graphics-on-intel-and-optimus-)
-      - [[Disable transparent hugepages](https://wiki.archlinux.org/title/VMware#Disable_transparent_hugepages)](#-disable-transparent-hugepages--https---wikiarchlinuxorg-title-vmware-disable-transparent-hugepages-)
-      - [[Virtual machine settings](https://wiki.archlinux.org/title/VMware#Virtual_machine_settings)](#-virtual-machine-settings--https---wikiarchlinuxorg-title-vmware-virtual-machine-settings-)
+      - [Enable 3D graphics](#enable-3d-graphics)
+      - [Disable transparent hugepages](#disable-transparent-hugepages)
+      - [Virtual machine settings](#virtual-machine-settings)
 - [视频下载工具](#------)
   * [KVM](#kvm)
 - [视频下载器](#-----)
   * [annie](#annie)
     + [Commands](#commands)
-  * [[youtube-dl](https://wiki.archlinux.org/title/Youtube-dl)](#-youtube-dl--https---wikiarchlinuxorg-title-youtube-dl-)
+  * [youtube-dl](#youtube-dl)
     + [Configuration](#configuration)
     + [Commands](#commands-1)
     + [Subtitle Options](#subtitle-options)
@@ -210,7 +210,9 @@ exec --no-startup-id redshift -P -O 5500
 
 
 
-## [Hardware video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration)
+## Hardware video acceleration
+
+> https://wiki.archlinux.org/title/Hardware_video_acceleration
 
 ```bash
 # AMD
@@ -317,7 +319,9 @@ sudo pacman -S ttf-font-awesome
 
 
 
-## [DPI](https://wiki.archlinux.org/title/HiDPI)
+## DPI
+
+> https://wiki.archlinux.org/title/HiDPI
 
 默认的 100% 缩放下标题、菜单文字还是太小了，有点伤眼睛，因此我们需要更改 [DPI](https://wiki.archlinux.org/title/HiDPI)。
 
@@ -349,9 +353,13 @@ DPI 默认数值为 96。如果我想要 1.15 倍缩放，那么 DPI 的数值�
 
 
 
-## [Dracula](https://draculatheme.com/) color theme
+## Dracula color theme
 
-### [fish](https://draculatheme.com/fish)
+> https://draculatheme.com/
+
+### fish
+
+> https://draculatheme.com/fish
 
 ```bash
 fisher install dracula/fish # 利用 fisher 安装
@@ -362,7 +370,9 @@ fish_config # 然后通过 fish_config 选择
 
 
 
-### [JetBrains](https://draculatheme.com/jetbrains)
+### JetBrains
+
+> https://draculatheme.com/jetbrains
 
 > Go to `Plugin Marketplace`, and search `Dracula`, click `Install`.
 >
@@ -370,7 +380,9 @@ fish_config # 然后通过 fish_config 选择
 
 
 
-### [i3wm](https://draculatheme.com/i3)
+### i3wm
+
+> https://draculatheme.com/i3
 
 > #### Install
 >
@@ -390,7 +402,9 @@ sudo pacman -S ant-dracula-gtk-theme dracula-gtk-theme ant-dracula-kvantum-theme
 
 
 
-### [Visual Studio Code](https://draculatheme.com/visual-studio-code)
+### Visual Studio Code
+
+> https://draculatheme.com/visual-studio-code
 
 > #### Install using Command Palette
 >
@@ -401,7 +415,9 @@ sudo pacman -S ant-dracula-gtk-theme dracula-gtk-theme ant-dracula-kvantum-theme
 
 
 
-### [Xfce4-terminal](https://draculatheme.com/xfce4-terminal)
+### Xfce4-terminal
+
+> https://draculatheme.com/xfce4-terminal
 
 > #### Install using Git
 >
@@ -472,14 +488,14 @@ ZF71R-DMX85-08DQY-8YMNC-PPHV8
 
 有多少设多少，直接拉满，反正 CPU 是共享的。
 
-#### [Enable 3D graphics](https://wiki.archlinux.org/title/VMware#Enable_3D_graphics_on_Intel_and_Optimus)
+#### Enable 3D graphics
 
 ```bash
 echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/.vmware/preferences
 echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/vmware/VIRTUAL_MACHINE_NAME.vmx
 ```
 
-#### [Disable transparent hugepages](https://wiki.archlinux.org/title/VMware#Disable_transparent_hugepages)
+#### Disable transparent hugepages
 
 If you notice the guest and/or the host frequently freezing when running a VM, you may want to disable transparent hugepages. To disable them for the current session, run (on the host):
 
@@ -489,7 +505,7 @@ sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
 To make the change persistent across boots, add the [kernel parameter](https://wiki.archlinux.org/title/Kernel_parameter) `transparent_hugepage=never`.
 
-#### [Virtual machine settings](https://wiki.archlinux.org/title/VMware#Virtual_machine_settings)
+#### Virtual machine settings
 
 ```bash
 vim .vmware/preferences
@@ -581,8 +597,9 @@ annie -f 80 -p BILIBILI_URL # 以 1080p 下载
 
 <br>
 
+## youtube-dl
 
-## [youtube-dl](https://wiki.archlinux.org/title/Youtube-dl)
+> https://wiki.archlinux.org/title/Youtube-dl
 
 ```bash
 sudo pacman -S youtube-dl ffmpeg
