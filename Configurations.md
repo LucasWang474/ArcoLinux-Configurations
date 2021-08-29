@@ -6,7 +6,7 @@
 sudo pacman -S amd-ucode
 ```
 
-<hr>
+
 
 ## 设置 Grub
 
@@ -24,7 +24,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 reboot
 ```
 
-<hr>
+
 
 ## 解决关机、重启时间过长
 
@@ -38,7 +38,7 @@ DefaultTimeoutStartSec=5s
 DefaultTimeoutStopSec=5s
 ```
 
-<hr>
+
 
 ## 电源管理
 
@@ -47,7 +47,7 @@ sudo pacman -S tlp powertop
 sudo systemctl enable tlp
 ```
 
-<hr>
+
 
 ## SSD
 
@@ -55,7 +55,7 @@ sudo systemctl enable tlp
 sudo systemctl enable --now fstrim.timer
 ```
 
-<hr>
+
 
 <br>
 
@@ -70,7 +70,7 @@ sudo sed 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/' -i /etc/locale.gen
 sudo locale-gen
 ```
 
-<hr>
+
 
 ## 命令行代理
 
@@ -94,7 +94,7 @@ abbr fuck 'export http_proxy=http://127.0.0.1:1082/; export https_proxy=$http_pr
 
 ![image-20210616231721347](Configurations.assets/image-20210616231721347.png)
 
-<hr>
+
 
 ## 设置默认软件
 
@@ -120,7 +120,7 @@ Section "Device"
 EndSection
 ```
 
-<hr>
+
 
 ## SDDM
 
@@ -142,7 +142,7 @@ sddm-greeter --test-mode --theme /usr/share/sddm/themes/sugar-candy
 sudo vim /etc/sddm.conf
 ```
 
-<hr>
+
 
 ## 夜间模式
 
@@ -157,7 +157,7 @@ sudo pacman -S redshift
 exec --no-startup-id redshift -P -O 5500
 ```
 
-<hr>
+
 
 ## [Hardware video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration)
 
@@ -166,7 +166,7 @@ exec --no-startup-id redshift -P -O 5500
 sudo pacman -S libva-mesa-driver mesa-vdpau
 ```
 
-<hr>
+
 
 ## 字体
 
@@ -264,7 +264,7 @@ sudo pacman -S ttf-font-awesome
 
 这样就能正常显示中文了。
 
-<hr>
+
 
 ## [DPI](https://wiki.archlinux.org/title/HiDPI)
 
@@ -290,13 +290,13 @@ Xft.rgba: rgb
 
 DPI 默认数值为 96。如果我想要 1.15 倍缩放，那么 DPI 的数值就是 96 * 1.15 = 110。
 
-<hr>
+
 
 ## 设置主题
 
 可以通过 lxappearance 设置。
 
-<hr>
+
 
 ## [Dracula](https://draculatheme.com/) color theme
 
@@ -309,7 +309,7 @@ fish_config # 然后通过 fish_config 选择
 
 ![image-20210616233929366](Configurations.assets/image-20210616233929366.png)
 
-<hr>
+
 
 ### [JetBrains](https://draculatheme.com/jetbrains)
 
@@ -317,7 +317,7 @@ fish_config # 然后通过 fish_config 选择
 >
 > Go to `Preferences | Appearance & Behavior | Appearance`, select `Dracula` from the dropdown menu.
 
-<hr>
+
 
 ### [i3wm](https://draculatheme.com/i3)
 
@@ -329,7 +329,7 @@ fish_config # 然后通过 fish_config 选择
 >
 > Append the colour palettes in `.config` to your existing i3 configuration files.
 
-<hr>
+
 
 ### GTK and QT
 
@@ -337,7 +337,7 @@ fish_config # 然后通过 fish_config 选择
 sudo pacman -S ant-dracula-gtk-theme dracula-gtk-theme ant-dracula-kvantum-theme-git 
 ```
 
-<hr>
+
 
 ### [Visual Studio Code](https://draculatheme.com/visual-studio-code)
 
@@ -348,7 +348,7 @@ sudo pacman -S ant-dracula-gtk-theme dracula-gtk-theme ant-dracula-kvantum-theme
 > 3. Write `Dracula Official`
 > 4. Select it or press Enter to install
 
-<hr>
+
 
 ### [Xfce4-terminal](https://draculatheme.com/xfce4-terminal)
 
@@ -414,7 +414,7 @@ YF390-0HF8P-M81RQ-2DXQE-M2UT6
 ZF71R-DMX85-08DQY-8YMNC-PPHV8
 ```
 
-<hr>
+
 ### Tips
 
 #### CPU
@@ -456,7 +456,7 @@ mainMem.partialLazySave = "FALSE"
 mainMem.partialLazyRestore = "FALSE"
 ```
 
-<hr>
+
 # 视频下载工具
 
 ## KVM
@@ -510,7 +510,6 @@ sudo systemctl enable --now virtlogd.service
 
 <br>
 
-<hr>
 # 视频下载器
 
 ## annie
@@ -531,7 +530,6 @@ annie -f 80 -p BILIBILI_URL # 以 1080p 下载
 
 <br>
 
-<hr>
 
 ## [youtube-dl](https://wiki.archlinux.org/title/Youtube-dl)
 
@@ -592,30 +590,5 @@ youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
 
 <br>
 
-<hr>
 
-# 文件格式转换: pandoc
-```bash
-sudo pacman -S pandoc pandoc-crossref 
 
-# pdf 输出
-sudo pacman -S texlive-core
-```
-
-<br>
-
-<br>
-
-<br>
-
-<hr>
-
-# 最好用的 Linux 启动器：Ulauncher
-
-```bash
-yay -S ulauncher
-```
-
-**一些优化：**
-
-TODO

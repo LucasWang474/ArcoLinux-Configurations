@@ -1,5 +1,9 @@
 # 安装 ArcoLinux-i3wm 之后的配置
 
+## 预览
+
+TODO
+
 ## 搭建基础环境
 
 ### 安装 fish
@@ -15,7 +19,7 @@ chsh -s /bin/fish # 更换当前用户默认的 shell 为 fish
 
 然后按 `Mod+x`，选择 `Logout`，重新登录。
 
-<hr>
+
 
 ### 使用 Xfce4-terminal
 
@@ -52,7 +56,7 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 
 小提示：你也可以按 F12 启动 drop-down xfce4-terminal。
 
-<hr>
+
 
 ### 设置 Rofi
 
@@ -74,7 +78,7 @@ bindsym $mod+d exec --no-startup-id rofi -show run -font "Noto Sans 13"
 
 小提示：你可以使用 rofi-theme-selector 来选择 rofi 主题。
 
-<hr>
+
 
 ### 设置亮度
 
@@ -115,7 +119,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 5%-
 
 <br>
 
-<hr>
+
 
 ### 更新系统
 
@@ -162,8 +166,10 @@ reboot
 
 如果在关机界面卡死了，直接断电就行了。关于这方面的配置可以看我的 [Configurations.md](Configurations.md)。
 
-<hr>
+
+
 ### 安装拼音输入法
+
 
 >  推荐看这个 wiki：[Fcitx5 (简体中文)](https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))。
 
@@ -214,7 +220,7 @@ INPUT_METHOD  DEFAULT=fcit
 - Cloud Pinyin
 - Pinyin （在这里设置候选栏数目才会生效）
 
-<hr>
+
 
 ### 安装 VSCode
 
@@ -226,21 +232,28 @@ sudo pacman -S visual-studio-code-bin
 
 ![image-20210616224342729](README.assets/image-20210616224342729.png)
 
-<hr>
+
 
 ### 安装浏览器
 
 ```bash
-sudo pacman -S google-chrome
+sudo pacman -S google-chrome brave-bin
 ```
 
-<hr>
+
 
 ### 文件浏览器
 
 已经预装好了 Thunar 文件浏览器，使用 Mod+Shift+Enter 打开。
 
-<hr>
+```bash
+# 或者 pcmanfm
+sudo pacman -S pcmanfm
+```
+
+
+
+
 
 ### 安装网络代理软件
 
@@ -269,9 +282,7 @@ vim ~/.config/qv2ray/init.sh
 #!/bin/bash
 
 killall qv2ray
-killall v2ray
 kill qv2ray
-kill v2ray
 sleep 2
 exec qv2ray
 ```
@@ -284,7 +295,7 @@ exec qv2ray
 exec --no-startup-id ~/.config/qv2ray/init.sh
 ```
 
-<hr>
+
 
 #### SwitchyOmega
 
@@ -309,7 +320,7 @@ GFW list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 ![image-20210616225251440](README.assets/image-20210616225251440.png)
 
-<hr>
+
 
 **到此为止，基本的环境搭建已经完成了，后面的配置都是个人喜好问题了。**
 
@@ -319,7 +330,7 @@ GFW list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 小提示：你可以使用 xfce4-appfinder 查看已安装的软件，学习学习 ArcoLinux 官方是如何配置系统的，这东西非常有用。快捷键是 Alt+F3。
 
-<hr>
+
 
 <br>
 
@@ -347,7 +358,7 @@ yay -S xunlei-bin
 mkdir ~/Downloads/XunleiDownloads # 然后在迅雷中设置默认下载位置
 ```
 
-<hr>
+
 
 ### 解压缩
 
@@ -363,7 +374,7 @@ unzip -O gbk ARCHIVE_NAME.zip
 abbr unzipgbk 'unzip -O gbk'
 ```
 
-<hr>
+
 
 ### 播放器
 
@@ -390,7 +401,7 @@ sudo vim /usr/bin/netease-cloud-music
 export QT_SCALE_FACTOR=1.4
 ```
 
-<hr>
+
 
 ### PDF
 
@@ -408,7 +419,7 @@ sudo pacman -S okular # 建议自己设置快捷键，
 yay -S masterpdfeditor-free
 ```
 
-<hr>
+
 
 ### Markdown
 
@@ -416,7 +427,7 @@ yay -S masterpdfeditor-free
 sudo pacman -S typora
 ```
 
-<hr>
+
 
 ### Office
 
@@ -425,7 +436,7 @@ sudo pacman -S typora
 sudo pacman -S libreoffice-fresh
 ```
 
-<hr>
+
 
 ### 思维导图
 
@@ -433,7 +444,7 @@ sudo pacman -S libreoffice-fresh
 yay -S xmind-2020
 ```
 
-<hr>
+
 
 ### 图像编辑器
 
@@ -441,7 +452,7 @@ yay -S xmind-2020
 sudo pacman -S gimp
 ```
 
-<hr>
+
 
 ### 录屏
 
@@ -450,7 +461,7 @@ sudo pacman -S simplescreenrecorder
 sudo pacman -S screenkey # print keys on the screen as you are entering
 ```
 
-<hr>
+
 
 ### 截图
 
@@ -489,23 +500,21 @@ mode "$screenshot" {
 
 然后通过 Win+c 启动 flameshot binding mode。
 
-<hr>
 
-### 闹钟
+
+### 闹钟时钟
 
 ```bash
 sudo pacman -S gnome-clocks
 ```
 
-<hr>
+
 
 ### 通讯
 
 ```bash
 sudo pacman -S telegram-desktop
 ```
-
-
 
 <br>
 
@@ -519,7 +528,7 @@ sudo pacman -S telegram-desktop
 sudo pacman -S anki
 ```
 
-<hr>
+
 
 ### Goldendict
 
@@ -548,7 +557,7 @@ yay -S fisher
 fish_config
 ```
 
-一些插件
+#### Plugins
 
 > - [awesome.fish](https://github.com/jorgebucaran/awesome.fish)
 
@@ -560,13 +569,31 @@ fish_config
 
 - [z](https://github.com/jethrokuan/z) 
 
-  **z** is a port of [z](https://github.com/rupa/z) for the [fish shell](https://fishshell.com/).
+  **z** is a port of [z](https://github.com/rupa/z) for the [fish shell](https://fishshell.com/). Usage: https://github.com/jethrokuan/z/blob/master/man/man1/z.md
 
   ```bash
   fisher install jethrokuan/z
   ```
 
-<hr>
+#### Tips
+
+##### fish abbr
+
+fish abbr 类似于 alias，个人觉得比 alias 更好用。
+
+```bash
+# 用法：abbr ABBR_NAME 'COMMANDS'
+abbr pS 'sudo pacman -S'
+abbr pSy 'sudo pacman -Syy'
+abbr pSyu 'sudo pacman -Syyu'
+abbr pr 'sudo pacman -R'
+abbr pqs 'pacman -Qs'
+
+# 命令行代理
+abbr fuck 'export http_proxy=http://127.0.0.1:1082/; export https_proxy=$http_proxy'
+```
+
+
 
 ### Git
 
@@ -576,27 +603,25 @@ git config --global user.name "Lucas Wang"
 git config --global credential.helper store # 保存账号密码
 ```
 
-<hr>
 
-### Jetbrains
+
+### Java, Jetbrains
 
 ```bash
 sudo pacman -S jdk8-openjdk openjdk8-doc
 sudo pacman -S jdk11-openjdk openjdk11-doc
 sudo pacman -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
-
-sudo pacman -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
-sudo ln -s ~/.config/fish/fish_variables /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/fish_variables
-
-sudo pacman -S pycharm-professional
-sudo ln -s ~/.config/fish/fish_variables /opt/pycharm-professional/plugins/terminal/fish/fish_variables
 ```
 
 #### Intellij Plugins
 
-- Dracula Theme
-- Atom Material Icons
-- Material Theme UI
+- Theming
+  - Dracula Theme
+  - Atom Material Icons
+  - Material Theme UI
+- Choose Runtime
+- IDE Eval Reset
+- Tabnine AI Code Completion
 
 #### Set default Java environment
 
@@ -611,9 +636,19 @@ sudo archlinux-java set java-11-openjdk
 sudo pacman -S jdk11-jetbrains-imfix
 ```
 
-进入 pycharm 或 idea，安装 Choose Runtimes 插件。然后 Ctrl + Shift + A 搜索 Choose，选择 Choose Boot Java Run Time ...。
+进入 pycharm 或 idea，安装 Choose Runtimes 插件。
 
-<hr>
+然后 Ctrl + Shift + A 搜索 Choose，选择 `Choose Runtimes...`，再选择。
+
+然后选择 `build 11.0.11+9-b1504.5 [Local /usr/lib/jvm/java-11-jetbrains]`。
+
+#### 解决 Intellij terminal 对 fish shell 的不适配
+
+取消勾选 Shell integration 即可。
+
+![image-20210829155136630](README.assets/image-20210829155136630.png)
+
+
 
 #### jshell
 
@@ -622,15 +657,16 @@ sudo ln -s /usr/lib/jvm/java-11-openjdk/bin/jshell /usr/bin/jshell
 jshell
 ```
 
-<hr>
+
 
 ### Python
 
 ```bash
 sudo pacman -S python python-pip
 sudo pacman -S ipython jupyter-notebook
-sudo pacman -S pycharm-community-edition
-```
 
-<hr>
+# 可以在 Intellij 中安装 python 插件，最后得到的功能和 pycharm-professional 实际上是一样的
+# sudo pacman -S pycharm-community-edition
+# sudo pacman -S pycharm-professional
+```
 
