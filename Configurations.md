@@ -1,13 +1,14 @@
 Table of Contents
 =================
 
-   * [Table of contents](#table-of-contents)
+   * [Table of Contents](#table-of-contents)
    * [系统维护](#系统维护)
       * [Ucode](#ucode)
       * [设置 Grub](#设置-grub)
       * [解决关机、重启时间过长](#解决关机重启时间过长)
       * [电源管理](#电源管理)
       * [SSD](#ssd)
+      * [垃圾清理](#垃圾清理)
    * [系统设置](#系统设置)
       * [Locale](#locale)
       * [命令行代理](#命令行代理)
@@ -39,9 +40,10 @@ Table of Contents
             * [Enable 3D graphics](#enable-3d-graphics)
             * [Disable transparent hugepages](#disable-transparent-hugepages)
             * [Virtual machine settings](#virtual-machine-settings)
-   * [视频下载工具](#视频下载工具)
+            * [取消 Enable drag and drop](#取消-enable-drag-and-drop)
       * [KVM](#kvm)
-   * [视频下载器](#视频下载器)
+   * [视频](#视频)
+      * [统计文件下的所有视频长度](#统计文件下的所有视频长度)
       * [annie](#annie)
          * [Commands](#commands)
       * [youtube-dl](#youtube-dl)
@@ -111,6 +113,32 @@ sudo systemctl enable --now fstrim.timer
 ```
 
 
+
+## 垃圾清理
+
+> - https://averagelinuxuser.com/clean-arch-linux/
+> - https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package
+
+```bash
+# 清除未安装的 pacman 缓存
+sudo pacman -Sc 
+
+# 清除所有 pacman 缓存
+sudo pacman -Scc
+
+# 清除 Orphan package (Remove unneeded dependencies)，这个很好用
+yay -Yc
+
+# Identify files not owned by any package
+sudo pacman -S pacutils
+sudo pacreport --unowned-files # 然后根据输出结果选择你要删除的东西
+
+# 下面的文件请小心清理
+# $HOME/.cache/
+# $HOME/.cache/yay
+# $HOME/.local/share/
+# $HOME/.config/
+```
 
 <br>
 
@@ -527,14 +555,17 @@ mainMem.partialLazySave = "FALSE"
 mainMem.partialLazyRestore = "FALSE"
 ```
 
+#### 取消 Enable drag and drop
 
-# 视频下载工具
+建议取消 `Enable drag and drop`，这个功能在有了共享文件夹之后显得更加垃圾了。
+
+<br>
+
+<br>
 
 ## KVM
 
 经过一番折腾，并没有发现 KVM 有多明显的性能提升，反而不能或很难设置一些效率工具，例如共享文件夹、共享复制剪切板、拖拽文件、自动适应窗口等。因此，KVM 方面的折腾暂时只能作罢了。
-
-
 
 > - [KVM - ArchWiki](https://wiki.archlinux.org/title/KVM)
 > - [QEMU - ArchWiki](https://wiki.archlinux.org/title/QEMU)
@@ -581,7 +612,14 @@ sudo systemctl enable --now virtlogd.service
 
 <br>
 
-# 视频下载器
+# 视频
+
+## 统计文件下的所有视频长度
+
+```bash
+# 统计所有 mp4 文件的长度
+find -name "*.mp4" -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
+```
 
 ## annie
 
