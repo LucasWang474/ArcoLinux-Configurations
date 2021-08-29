@@ -483,6 +483,8 @@ yay -S masterpdfeditor-free
 
 ```bash
 sudo pacman -S typora
+
+yay -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
 ```
 
 
