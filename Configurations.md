@@ -719,5 +719,54 @@ youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
 
 <br>
 
+# 效率工具
 
+## Ulauncher
+
+Rofi 的替代品，虽然有点瑕疵，但是总体更具现代化，更好用。
+
+```bash
+yay -S ulauncher
+```
+
+### 设置快捷键
+
+把默认的 `Ctrl+Space` 更改为 `Mod+d`。
+
+### 安装插件
+
+此时建议从命令行重新启动 Ulauncher，方便调试。
+
+Ulauncher 的插件源自 github，最好在命令行开启美国的代理，不然可能安装得很慢。
+
+插件推荐：
+
+- Emoji
+- Process Murderer
+
+### 修改提示框样式
+
+Ulauncher 在 i3wm 下默认样式瑕疵太多。
+
+```bash
+sudo vim /usr/share/ulauncher/ui/UlauncherWindow.ui
+```
+
+```xml
+<interface>
+	<object class="UlauncherWindow" id="ulauncher_window">
+        <!-- 提示框宽度 -->
+        <property name="width_request">900</property>
+        <child>
+      		<object class="GtkBox" id="body">
+                <!-- 去除透明 margin -->
+                <property name="margin_left">0</property>
+                <property name="margin_right">0</property>
+                <property name="margin_top">0</property>
+                <property name="margin_bottom">0</property>
+            </object>
+        </child>
+    </object>
+</interface>    
+```
 

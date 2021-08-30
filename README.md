@@ -284,6 +284,9 @@ INPUT_METHOD  DEFAULT=fcit
 
 ```bash
 sudo pacman -S visual-studio-code-bin
+
+# 也可以安装 sublime
+sudo pacman -S sublime-text-4
 ```
 
 然后安装 i3 语法高亮插件。之后就可以使用 VSCode 愉快地配置了。
