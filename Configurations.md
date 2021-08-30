@@ -383,6 +383,25 @@ DPI 默认数值为 96。如果我想要 1.15 倍缩放，那么 DPI 的数值�
 
 可以通过 lxappearance 设置。
 
+### 解决 lxappearance 无法更改 Mouse Cursor
+
+> - https://wiki.archlinux.org/title/Cursor_themes
+
+直接编辑 `~/.icons/default/index.theme` 以及 `~/.config/gtk-3.0/settings.ini`：
+
+```
+[Icon Theme]
+Name=Bibata-Modern-Amber
+Comment=Bibata-Modern-Amber
+Inherits=Bibata-Modern-Amber
+```
+
+```
+gtk-cursor-theme-name=Bibata-Modern-Amber
+```
+
+然后 logout 或者 reboot 即可。
+
 
 
 ## Dracula color theme
