@@ -304,11 +304,6 @@ sudo pacman -S google-chrome brave-bin
 
 已经预装好了 Thunar 文件浏览器，使用 Mod+Shift+Enter 打开。
 
-```bash
-# 或者 pcmanfm
-sudo pacman -S pcmanfm
-```
-
 
 
 
