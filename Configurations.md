@@ -723,7 +723,7 @@ youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
 
 ## Ulauncher
 
-Rofi 的替代品，虽然有点瑕疵，但是总体更具现代化，更好用。
+Rofi 的替代品，虽然有点瑕疵，但是总体更具现代化。
 
 ```bash
 yay -S ulauncher
