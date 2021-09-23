@@ -1,5 +1,6 @@
-Table of Contents
-=================
+[TOC]
+
+
 
    * [安装 ArcoLinux-i3wm 之后的配置](#安装-arcolinux-i3wm-之后的配置)
       * [预览](#预览)
@@ -438,7 +439,7 @@ abbr unzipgbk 'unzip -O gbk'
 # mpv 其实非常好用，可能是 linux 下最好用的播放器了
 sudo pacman -S mpv
 
-sudo pacman -S netease-cloud-music-imfix # 可以使用输入法版本
+sudo pacman -S netease-cloud-music
 # 可以从 ~/.cache/netease-cloud-music/CachedSongs 中偷歌
 
 # QQ, NeteaseClouseMusic, Kugou, Kuwo, Migu 等聚合版本
