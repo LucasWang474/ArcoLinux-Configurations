@@ -152,7 +152,7 @@ sudo locale-gen
 
 
 
-## 命令行代理
+## 命令行代理  
 
 我的代理配置如下：
 
@@ -255,7 +255,18 @@ sudo pacman -S libva-mesa-driver mesa-vdpau
 ```bash
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji
 sudo pacman -S ttf-font-awesome
+sudo pacman -S ttf-cascadia-code 
 ```
+
+### 偷 Windows 的字体
+
+首先在 Windows 下 `` 复制字体文件，然后将其复制到 Linux 下。
+
+可以复制到 `~/.local/share/fonts` 或者 `/usr/local/share/fonts/`。
+
+然后重启即可。
+
+### 配置字体
 
 创建 ~/.config/fontconfig/fonts.conf 文件：
 
@@ -322,10 +333,6 @@ sudo pacman -S ttf-font-awesome
         <family>monospace</family>
         <prefer>
             <family>Noto Sans Mono</family>
-            <family>Noto Sans Mono CJK SC</family>
-            <family>Noto Sans Mono CJK TC</family>
-            <family>Noto Sans Mono CJK JP</family>
-            <family>Noto Sans Mono CJK KR</family>
             <family>Droid Sans Mono</family>
         </prefer>
     </alias>
@@ -333,10 +340,6 @@ sudo pacman -S ttf-font-awesome
         <family>mono</family>
         <prefer>
             <family>Noto Sans Mono</family>
-            <family>Noto Sans Mono CJK SC</family>
-            <family>Noto Sans Mono CJK TC</family>
-            <family>Noto Sans Mono CJK JP</family>
-            <family>Noto Sans Mono CJK KR</family>
             <family>Droid Sans Mono</family>
         </prefer>
     </alias>
@@ -345,6 +348,10 @@ sudo pacman -S ttf-font-awesome
 ```
 
 这样就能正常显示中文了。
+
+
+
+
 
 
 
