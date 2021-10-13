@@ -310,7 +310,21 @@ sudo pacman -S google-chrome brave-bin
 
 ### 安装网络代理软件
 
-#### v2ray + qv2ray
+#### v2ray + v2raya
+
+```bash
+sudo pacman -S v2ray v2raya
+```
+
+在 i3 config 中设置：
+
+```bash
+exec --no-startup-id v2raya --passcheckroot --config ~/.config/v2raya
+```
+
+<br>
+
+#### v2ray + qv2ray [deprecated]
 
 ```bash
 sudo pacman -S v2ray qv2ray
@@ -442,6 +456,7 @@ sudo pacman -S netease-cloud-music
 # 优点：能免费听大部分歌，能同步各个平台的帐号及歌单
 # 缺点：不能下载，也不能从本地缓存中偷出来
 yay -S listen1-desktop-appimage 
+
 ```
 
 **小技巧：netease-cloud-music 设置缩放**
@@ -688,7 +703,7 @@ sudo archlinux-java set java-11-openjdk
 #### 解决输入法位置 bug
 
 ```bash
-sudo pacman -S jdk11-jetbrains-imfix
+yay -S jdk11-jetbrains-imfix
 ```
 
 进入 pycharm 或 idea，安装 Choose Runtimes 插件。
