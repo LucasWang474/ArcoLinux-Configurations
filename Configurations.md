@@ -299,6 +299,7 @@ sudo pacman -S ttf-cascadia-code
     <alias>
         <family>serif</family>
         <prefer>
+            <family>Microsoft Yahei</family>
             <family>Noto Serif</family>
             <family>Noto Serif CJK SC</family>
             <family>Noto Serif CJK TC</family>
@@ -310,6 +311,7 @@ sudo pacman -S ttf-cascadia-code
     <alias>
         <family>sans-serif</family>
         <prefer>
+            <family>Microsoft Yahei</family>
             <family>Noto Sans</family>
             <family>Noto Sans CJK SC</family>
             <family>Noto Sans CJK TC</family>
@@ -321,6 +323,7 @@ sudo pacman -S ttf-cascadia-code
     <alias>
         <family>sans-serif</family>
         <prefer>
+            <family>Microsoft Yahei</family>
             <family>Noto Sans</family>
             <family>Noto Sans CJK SC</family>
             <family>Noto Sans CJK TC</family>
@@ -332,19 +335,20 @@ sudo pacman -S ttf-cascadia-code
     <alias>
         <family>monospace</family>
         <prefer>
-            <family>Noto Sans Mono</family>
             <family>Droid Sans Mono</family>
+            <family>Noto Sans Mono</family>
         </prefer>
     </alias>
     <alias>
         <family>mono</family>
         <prefer>
-            <family>Noto Sans Mono</family>
             <family>Droid Sans Mono</family>
+            <family>Noto Sans Mono</family>
         </prefer>
     </alias>
 
 </fontconfig>
+
 ```
 
 这样就能正常显示中文了。
