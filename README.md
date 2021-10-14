@@ -61,6 +61,54 @@ TODO
 
 ## 搭建基础环境
 
+### 更新系统
+
+自动生成中国源：
+
+```bash
+sudo reflector -c China --save /etc/pacman.d/mirrorlist --sort rate
+```
+
+看看都自动生成了哪些：
+
+```bash
+cat /etc/pacman.d/mirrorlist
+```
+
+添加 ArchLinuxCN 源：
+
+```bash
+sudo vim /etc/pacman.conf
+```
+
+```bash
+# 在 /etc/pacman.conf 尾部添加下面几行
+# 可以参考、对比上面的 ArchLinux 源，然后你就知道怎么自己添加 ArchLinuxCN 源了（cat /etc/pacman.d/mirrorlist）
+
+[archlinuxcn]
+# Server = http://mirror.lzu.edu.cn/archlinuxcn/$arch
+# Server = http://mirrors.bfsu.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch
+```
+
+```bash
+sudo pacman -Syy
+sudo pacman -S archlinuxcn-keyring
+```
+
+最后更新系统：
+
+```bash
+sudo pacman -Syyu
+reboot
+```
+
+如果在关机界面卡死了，直接断电就行了。关于这方面的配置可以看我的 [Configurations.md](Configurations.md)。
+
+<br>
+
+
+
 ### 安装 fish
 
 人生太短，我用 fish。
@@ -175,51 +223,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 5%-
 <br>
 
 
-
-### 更新系统
-
-现在可以正式开始舒舒服服地配置系统了！
-
-自动生成中国源：
-
-```bash
-sudo reflector -c China --save /etc/pacman.d/mirrorlist --sort rate
-```
-
-看看都自动生成了哪些：
-
-```bash
-cat /etc/pacman.d/mirrorlist
-```
-
-添加 ArchLinuxCN 源：
-
-```bash
-sudo vim /etc/pacman.conf
-```
-
-```bash
-# 在 /etc/pacman.conf 尾部添加下面几行
-# 可以参考、对比上面的 ArchLinux 源，然后你就知道怎么自己添加 ArchLinuxCN 源了（cat /etc/pacman.d/mirrorlist）
-
-[archlinuxcn]
-Server = http://mirror.lzu.edu.cn/archlinuxcn/$arch
-# Server = http://mirrors.bfsu.edu.cn/archlinuxcn/$arch
-```
-
-```bash
-sudo pacman -Syy
-sudo pacman -S archlinuxcn-keyring
-```
-
-最后更新系统：
-
-```bash
-sudo pacman -Syyu
-reboot
-```
-
-如果在关机界面卡死了，直接断电就行了。关于这方面的配置可以看我的 [Configurations.md](Configurations.md)。
 
 
 
