@@ -205,6 +205,7 @@ EndSection
 ## SDDM
 
 ```bash
+# 在虚拟机下这三个可能有点慢
 yay -S sddm-sugar-candy-git sddm-sugar-dark sddm-sugar-light
 ```
 
@@ -214,13 +215,7 @@ Preview:
 sddm-greeter --test-mode --theme /usr/share/sddm/themes/sugar-candy
 ```
 
-使用 sddm-config-editor 编辑 sddm 主题。
-
-具体配置文件：/etc/sddm.conf
-
-```bash
-sudo vim /etc/sddm.conf
-```
+然后使用 arcolinux-tweak-tool 设置新的主题。
 
 
 
