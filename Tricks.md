@@ -24,3 +24,15 @@ sudo ln FILE_PATH /bin/grabc
 
 Now try to run it with rofi.
 
+
+
+
+
+# Shell
+
+## [tldr](https://tldr.sh/)
+
+```bash
+sudo pacman -S tldr
+```
+
