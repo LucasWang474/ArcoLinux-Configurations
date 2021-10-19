@@ -120,8 +120,12 @@ sudo systemctl enable --now fstrim.timer
 # 清除未安装的 pacman 缓存
 sudo pacman -Sc 
 
+yay -Sc
+
 # 清除所有 pacman 缓存
 sudo pacman -Scc
+
+yay -Scc
 
 # 清除 Orphan package (Remove unneeded dependencies)，这个很好用
 yay -Yc

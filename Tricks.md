@@ -2,29 +2,15 @@
 
 ## grab color
 
-Create a shell script:
-
 ```bash
-#!/usr/bin/env bash
-
-xcolor | tr -d '\n' | xsel -b
+sudo pacman -S xcolor
 ```
 
-Modify permission:
+Add it to i3 config:
 
 ```bash
-chmod u+x FILE_PATH
+bindsym $mod+g --release exec xcolor -s -S 12 -P 300
 ```
-
-Hard link it to `/bin`:
-
-```bash
-sudo ln FILE_PATH /bin/grabc
-```
-
-Now try to run it with rofi.
-
-
 
 
 

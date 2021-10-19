@@ -455,8 +455,8 @@ sudo pacman -S netease-cloud-music
 # QQ, NeteaseClouseMusic, Kugou, Kuwo, Migu 等聚合版本
 # 优点：能免费听大部分歌，能同步各个平台的帐号及歌单
 # 缺点：不能下载，也不能从本地缓存中偷出来
-yay -S listen1-desktop-appimage 
-
+yay -S listen1-desktop-appimage
+sudo ln /opt/appimages/listen1.AppImage /usr/bin/listen1
 ```
 
 **小技巧：netease-cloud-music 设置缩放**
@@ -503,7 +503,10 @@ yay -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
 
 
 ```bash
-sudo pacman -S libreoffice-fresh
+# yay -S onlyoffice
+
+# wps-office-cn 有点双标恶心人，我选择不用
+yay -S wps-office wps-office-mime ttf-wps-fonts ttf-ms-fonts
 ```
 
 
@@ -595,7 +598,8 @@ sudo pacman -S telegram-desktop
 ### Anki
 
 ```bash
-sudo pacman -S anki
+# sudo pacman -S anki
+yay -S anki-official-binary-bundle
 ```
 
 
@@ -691,7 +695,6 @@ sudo pacman -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
   - Material Theme UI
 - Choose Runtime
 - IDE Eval Reset
-- Tabnine AI Code Completion
 
 #### Set default Java environment
 
@@ -739,8 +742,6 @@ sudo pacman -S ipython jupyter-notebook
 # sudo pacman -S pycharm-community-edition
 # sudo pacman -S pycharm-professional
 ```
-
-## 
 
 <br>
 
