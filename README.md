@@ -55,7 +55,33 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 # 安装 ArcoLinux-i3wm 之后的配置
 
+更多配置可以看 [Configurations.,d](./Configurations.md) 和 [Tricks.md](./Tricks.md).
+
 ## 预览
+
+### **终端**
+
+![image-20211020061357836](/home/lucas/.config/Typora/typora-user-images/image-20211020061357836.png)
+
+### **中文字体**
+
+![image-20211020061449434](/home/lucas/.config/Typora/typora-user-images/image-20211020061449434.png)
+
+![image-20211020061548860](/home/lucas/.config/Typora/typora-user-images/image-20211020061548860.png)
+
+### GTK 主题
+
+![image-20211020061637667](/home/lucas/.config/Typora/typora-user-images/image-20211020061637667.png)
+
+### 多屏显示
+
+![image-20211020061825657](/home/lucas/.config/Typora/typora-user-images/image-20211020061825657.png)
+
+<br>
+
+<br>
+
+<br>
 
 ## 搭建基础环境
 
@@ -71,6 +97,12 @@ sudo reflector -c China --save /etc/pacman.d/mirrorlist --sort rate
 
 ```bash
 cat /etc/pacman.d/mirrorlist
+```
+
+刷新
+
+```bash
+sudo pacman -Syy
 ```
 
 添加 ArchLinuxCN 源：
@@ -91,6 +123,8 @@ Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch
 sudo pacman -Syy
 sudo pacman -S archlinuxcn-keyring
 ```
+
+接下來你就可以使用 [yay](https://github.com/Jguer/yay) 了。
 
 最后更新系统：
 
@@ -159,7 +193,12 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 
 ### 设置 Rofi
 
-rofi 是一个软件启动器。
+> 更新：
+>
+> - dmenu 更轻量
+> - uTools 功能更丰富
+
+rofi 是一个软件启动器，对于新手可以先暂时使用 rofi，之后尝试 dmenu 和 uTools。
 
 打开 i3 config，找到下面一行：
 
@@ -193,7 +232,7 @@ step count 指的是除数，即 100 / (step count)。比如我这里设置了 2
 
 然后再试一下笔记本的亮度功能键。
 
-#### 通过 brightnessctl
+#### 通过 brightnessctl (更推荐这个)
 
 ```bash
 sudo pacman -Syy brightnessctl
@@ -266,13 +305,13 @@ INPUT_METHOD  DEFAULT=fcit
 
 <br>
 
-其它的设置可以看 fcitx5-configtool 里面的 Addons 一页，里面有很多好用的 Addon。
+**其它的设置可以看 fcitx5-configtool 里面的 Addons 一页，里面有很多好用的 Addon。**
 
-例如：
+**例如：**
 
-- Clipboard
-- Cloud Pinyin
-- Pinyin （在这里设置候选栏数目才会生效）
+- **Clipboard** (可以使用功能更强大 uTools 剪切板插件)
+- **Cloud Pinyin**
+- **Pinyin （在这里设置候选栏数目才会生效）**
 
 
 
@@ -281,7 +320,7 @@ INPUT_METHOD  DEFAULT=fcit
 ```bash
 sudo pacman -S visual-studio-code-bin
 
-# 也可以安装 sublime
+
 sudo pacman -S sublime-text-4
 ```
 
