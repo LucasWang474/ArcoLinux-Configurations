@@ -86,8 +86,6 @@ sudo vim /etc/pacman.conf
 # 可以参考、对比上面的 ArchLinux 源，然后你就知道怎么自己添加 ArchLinuxCN 源了（cat /etc/pacman.d/mirrorlist）
 
 [archlinuxcn]
-# Server = http://mirror.lzu.edu.cn/archlinuxcn/$arch
-# Server = http://mirrors.bfsu.edu.cn/archlinuxcn/$arch
 Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch
 ```
 
@@ -413,8 +411,7 @@ GFW list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 #### 百度网盘
 
 ```bash
-yay -S baidunetdisk-bin
-sudo ln -s /usr/lib/baidunetdisk/baidunetdisk /usr/bin/baidunetdisk
+yay -S baidunetdisk-electron
 
 mkdir ~/Downloads/BaidunetdiskDownloads # 然后在百度网盘中设置默认下载位置
 ```

@@ -250,7 +250,8 @@ sudo pacman -S libva-mesa-driver mesa-vdpau
 ```bash
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji
 sudo pacman -S ttf-font-awesome
-sudo pacman -S ttf-cascadia-code 
+sudo pacman -S ttf-cascadia-code
+yay -S consolas-font
 ```
 
 ### 偷 Windows 的字体
@@ -451,7 +452,7 @@ fish_config # 然后通过 fish_config 选择
 ### GTK and QT
 
 ```bash
-sudo pacman -S dracula-gtk-theme
+yay -S dracula-gtk-theme
 ```
 
 
