@@ -57,8 +57,6 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## 预览
 
-TODO
-
 ## 搭建基础环境
 
 ### 更新系统
@@ -741,6 +739,14 @@ sudo pacman -S ipython jupyter-notebook
 # 可以在 Intellij 中安装 python 插件，最后得到的功能和 pycharm-professional 实际上是一样的
 # sudo pacman -S pycharm-community-edition
 # sudo pacman -S pycharm-professional
+```
+
+### Zeal
+
+离线文档
+
+```bash
+sudo pacman -S zeal
 ```
 
 <br>

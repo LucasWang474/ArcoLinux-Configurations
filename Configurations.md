@@ -321,20 +321,10 @@ yay -S consolas-font
         </prefer>
     </alias>
     <alias>
-        <family>sans-serif</family>
-        <prefer>
-            <family>Microsoft Yahei</family>
-            <family>Noto Sans</family>
-            <family>Noto Sans CJK SC</family>
-            <family>Noto Sans CJK TC</family>
-            <family>Noto Sans CJK JP</family>
-            <family>Noto Sans CJK KR</family>
-            <family>Droid Sans</family>
-        </prefer>
-    </alias>
-    <alias>
         <family>monospace</family>
         <prefer>
+            <family>Consolas</family>
+            <family>Cascadia Mono PL</family>
             <family>Droid Sans Mono</family>
             <family>Noto Sans Mono</family>
         </prefer>
@@ -342,13 +332,14 @@ yay -S consolas-font
     <alias>
         <family>mono</family>
         <prefer>
+            <family>Consolas</family>
+            <family>Cascadia Mono PL</family>
             <family>Droid Sans Mono</family>
             <family>Noto Sans Mono</family>
         </prefer>
     </alias>
 
 </fontconfig>
-
 ```
 
 这样就能正常显示中文了。
