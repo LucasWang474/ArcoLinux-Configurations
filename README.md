@@ -61,21 +61,21 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ### **终端**
 
-![image-20211020061357836](/home/lucas/.config/Typora/typora-user-images/image-20211020061357836.png)
+![image-20211020061357836](README.assets/image-20211020061357836.png)
 
 ### **中文字体**
 
-![image-20211020061449434](/home/lucas/.config/Typora/typora-user-images/image-20211020061449434.png)
+![image-20211020061449434](README.assets/image-20211020061449434-16346830933391.png)
 
-![image-20211020061548860](/home/lucas/.config/Typora/typora-user-images/image-20211020061548860.png)
+![image-20211020061548860](README.assets/image-20211020061548860-16346830975422.png)
 
 ### GTK 主题
 
-![image-20211020061637667](/home/lucas/.config/Typora/typora-user-images/image-20211020061637667.png)
+![image-20211020061637667](README.assets/image-20211020061637667-16346831003633.png)
 
 ### 多屏显示
 
-![image-20211020061825657](/home/lucas/.config/Typora/typora-user-images/image-20211020061825657.png)
+![image-20211020061825657](README.assets/image-20211020061825657-16346831026184.png)
 
 <br>
 
