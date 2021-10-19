@@ -446,6 +446,25 @@ GFW list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 
 
+
+
+<br>
+
+<br>
+
+## i3wm 的配置
+
+参考我的 [Dotfiles](https://github.com/LucasWang474/Dotfiles).
+
+i3wm 配置文件本身就很容易阅读，强烈推荐看看我的配置文件，个人认为还是极为优雅且高效的。
+
+Tip: 修改之后按 Mod+Shift+R 重启 i3wm，如果报错则说明你语法错了。
+
+```bash
+git clone https://github.com/LucasWang474/Dotfiles.git
+cp -r Dotfiles/.config/i3 ~/.config
+```
+
 <br>
 
 <br>
