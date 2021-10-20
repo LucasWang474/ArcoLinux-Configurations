@@ -58,3 +58,13 @@ mode "$grabc" {
 sudo pacman -S tldr
 ```
 
+
+
+## Alarm clock
+
+```bash
+sleep 10s && mpv ~/Music/FILE
+sleep 15m && mpv ~/Music/FILE
+sleep 1h && mpv ~/Music/FILE
+```
+

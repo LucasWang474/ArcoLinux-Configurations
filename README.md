@@ -683,6 +683,56 @@ sudo pacman -S goldendict hunspell hunspell-en_US
 
 ## 编程软件
 
+### vim
+
+> - https://wiki.archlinux.org/title/vim
+> - https://www.ruanyifeng.com/blog/2018/09/vimrc.html
+
+```bash
+vim .vimrc
+```
+
+```bash
+set clipboard=unnamedplus
+
+" set number
+" set relativenumber
+
+set showmode
+
+set showcmd
+
+" set mouse=a 
+
+set encoding=utf-8
+
+filetype indent on
+
+filetype plugin on 
+
+syntax on
+
+set autoindent
+
+set nocompatible 
+
+set tabstop=4
+
+set expandtab
+
+set cursorline
+
+set incsearch
+
+set ignorecase
+
+set smartcase
+
+set noerrorbells
+```
+
+
+
 ### fish
 
 ```bash
@@ -740,6 +790,16 @@ abbr fuck 'export http_proxy=http://127.0.0.1:1082/; export https_proxy=$http_pr
 git config --global user.email "474.lucas.wang@gmail.com"
 git config --global user.name "Lucas Wang"
 git config --global credential.helper store # 保存账号密码
+```
+
+#### Proxy
+
+```bash
+vim .gitconfig
+```
+
+```bash
+
 ```
 
 
@@ -827,8 +887,7 @@ sudo pacman -S zeal
 ### File search
 
 ```bash
-# sudo pacman -S catfish
-sudo pacman -S kfind
+sudo pacman -S catfish
 ```
 
 ### File compare
