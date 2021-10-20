@@ -822,3 +822,18 @@ sudo pacman -S zeal
 
 <br>
 
+## Others
+
+### File search
+
+```bash
+# sudo pacman -S catfish
+sudo pacman -S kfind
+```
+
+### File compare
+
+```bash
+sudo pacman -S meld
+```
+

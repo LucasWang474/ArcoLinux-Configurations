@@ -256,6 +256,8 @@ sudo pacman -S noto-fonts-cjk noto-fonts-emoji
 sudo pacman -S ttf-font-awesome
 sudo pacman -S ttf-cascadia-code
 yay -S consolas-font
+
+sudo pacman -S font-manager
 ```
 
 ### 偷 Windows 的字体
