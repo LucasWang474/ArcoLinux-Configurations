@@ -571,7 +571,7 @@ mainMem.partialLazySave = "FALSE"
 mainMem.partialLazyRestore = "FALSE"
 ```
 
-#### 取消 Enable drag and drop
+#### Disable drag and drop
 
 建议取消 `Enable drag and drop`，这个功能在有了共享文件夹之后显得更加垃圾了。
 
@@ -633,6 +633,8 @@ sudo systemctl enable --now virtlogd.service
 ## 统计文件下的所有视频长度
 
 ```bash
+sudo pacman -S mediainfo
+
 # 统计所有 mp4 文件的长度
 find -name "*.mp4" -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
 ```

@@ -664,7 +664,7 @@ sudo pacman -S telegram-desktop
 
 ```bash
 # sudo pacman -S anki
-yay -S anki-official-binary-bundle
+yay -S anki-git
 ```
 
 
@@ -810,6 +810,9 @@ vim .gitconfig
 sudo pacman -S jdk8-openjdk openjdk8-doc
 sudo pacman -S jdk11-openjdk openjdk11-doc
 sudo pacman -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
+
+# sudo pacman -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
+sudo pacman -S webstorm webstorm-jre npm 
 ```
 
 #### Intellij Plugins
@@ -842,9 +845,20 @@ yay -S jdk11-jetbrains-imfix
 
 #### 解决 Intellij terminal 对 fish shell 的不适配
 
-取消勾选 Shell integration 即可。
+- 方法 1
 
-![image-20210829155136630](README.assets/image-20210829155136630.png)
+  取消勾选 Shell integration 即可。
+
+  ![image-20210829155136630](README.assets/image-20210829155136630.png)
+
+- 方法 2
+
+  ```bash
+  sudo rm -rf /opt/intellij-idea-ultimate-edition/plugins/terminal/fish
+  sudo ln -s ~/.config/fish /opt/intellij-idea-ultimate-edition/plugins/terminal/fish
+  ```
+
+  
 
 
 
