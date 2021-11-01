@@ -68,3 +68,24 @@ sleep 15m && mpv ~/Music/FILE
 sleep 1h && mpv ~/Music/FILE
 ```
 
+
+
+## Count video duration
+
+```bash
+sudo pacman -S mediainfo
+
+# you may add '-maxdepth NUMBER' option to find
+find . -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
+```
+
+
+
+## Reset password lock
+
+```bash
+faillock --user lucas --reset
+```
+
+
+

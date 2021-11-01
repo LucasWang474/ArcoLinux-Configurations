@@ -651,6 +651,7 @@ sudo pacman -S annie
 annie -p BILIBILI_URL # 下载整个合集
 annie -i -p BILIBILI_URL # 获取下载信息
 annie -f 80 -p BILIBILI_URL # 以 1080p 下载
+annie -eto # BILIBILI ONLY, do not include the playlist title
 ```
 
 <br>
