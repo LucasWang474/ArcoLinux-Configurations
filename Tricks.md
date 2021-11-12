@@ -70,13 +70,16 @@ sleep 1h && mpv ~/Music/FILE
 
 
 
-## Count video duration
+## Video duration
 
 ```bash
 sudo pacman -S mediainfo
 
+
+find -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
+
 # you may add '-maxdepth NUMBER' option to find
-find . -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
+find -maxdepth 3 -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
 ```
 
 
@@ -88,4 +91,30 @@ faillock --user lucas --reset
 ```
 
 
+
+## Preview markdown file with GitHub style
+
+See: https://github.com/joeyespo/grip#usage
+
+```bash
+# https://github.com/joeyespo/grip
+# Preview GitHub Markdown files like Readme locally before committing them.
+yay -S python-grip-git
+
+grip README.md
+```
+
+
+
+
+
+## Base64
+
+```bash
+# encode
+echo Linux | base64 # Output: TGludXgK
+
+# decode
+echo TGludXgK | base64 --decode # Output: Linux
+```
 

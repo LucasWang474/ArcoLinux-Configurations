@@ -210,7 +210,7 @@ EndSection
 
 ```bash
 # 在虚拟机下这三个可能有点慢
-yay -S sddm-sugar-candy-git sddm-sugar-dark sddm-sugar-light
+yay -S sddm-sugar-candy-git sddm-config-editor-git sddm-sugar-dark sddm-sugar-light
 ```
 
 Preview:

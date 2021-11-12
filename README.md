@@ -202,12 +202,12 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 
 ### 设置 Rofi
 
-> 更新：
+> **更新：**
 >
-> - dmenu 更轻量
-> - uTools 功能更丰富
+> - **dmenu 更轻量**
+> - **uTools 功能更丰富**
 
-rofi 是一个软件启动器，对于新手可以先暂时使用 rofi，之后尝试 dmenu 和 uTools。
+rofi 是一个软件启动器，对于新手可以先**暂时使用 rofi**，之后尝试 dmenu 和 uTools。
 
 打开 i3 config，找到下面一行：
 
