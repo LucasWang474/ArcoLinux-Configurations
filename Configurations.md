@@ -630,15 +630,6 @@ sudo systemctl enable --now virtlogd.service
 
 # 视频
 
-## 统计文件下的所有视频长度
-
-```bash
-sudo pacman -S mediainfo
-
-# 统计所有 mp4 文件的长度
-find -name "*.mp4" -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2>/dev/null | awk '{s+=$1/1000} END {h=s/3600; s=s%3600; printf "%.2d:%.2d\n", int(h), int(s/60)}'
-```
-
 ## annie
 
 ```bash
@@ -718,4 +709,92 @@ youtube-dl --write-sub --sub-lang 'zh-CN,en' --skip-download URL
 <br>
 
 <br>
+
+## LosslessCut
+
+> https://github.com/mifi/lossless-cut
+>
+> The swiss army knife of lossless video/audio editing
+
+```bash
+sudo pacman -S losslesscut-bin
+```
+
+<br>
+
+<br>
+
+<br>
+
+# 触摸版操作
+
+> - [bulletmark/libinput-gestures: Actions gestures on your touchpad using libinput](https://github.com/bulletmark/libinput-gestures)
+> - [Gestures — libinput 1.18.901 documentation](https://wayland.freedesktop.org/libinput/doc/latest/gestures.html)
+
+首先检查 groups，确保你的用户在 input 中。
+
+例如：
+
+```bash
+$ groups
+sys network scanner power autologin rfkill users video storage optical lp input audio wheel lucas
+```
+
+安装 `libinput-gestures`:
+
+```bash
+sudo pacman -S --needed libinput-gestures xf86-input-libinput wmctrl xdotool
+```
+
+在 i3wm 配置中设置自启动：
+
+```bash
+exec --no-startup-id libinput-gestures-setup start
+```
+
+```bash
+# 其他操作
+libinput-gestures-setup autostart
+libinput-gestures-setup start
+libinput-gestures-setup stop
+libinput-gestures-setup restart
+libinput-gestures-setup status
+```
+
+具体如何配置请参考上面列出的参考文档。
+
+我的配置：
+
+```bash
+vim .config/libinput-gestures.conf
+```
+
+```bash
+# Move to next workspace (works for GNOME/KDE/etc on Wayland and Xorg)
+# 四指下滑，移动到当前屏幕的下一个 workspace
+# 虽然写的是 swipe up，但这是 natural scroll 导致的
+gesture swipe up 4 _internal ws_down
+
+# Move to prev workspace (works for GNOME/KDE/etc on Wayland and Xorg)
+# 四指上滑，移动到下当前屏幕的下一个 workspace
+gesture swipe down 4 _internal ws_up
+
+# Tab go left
+gesture swipe left 3 xdotool key control+Page_Up
+# Tab go right
+gesture swipe right 3 xdotool key control+Page_Down
+
+# Window go left
+gesture swipe left 4 xdotool key super+Left
+# Window go right
+gesture swipe right 4 xdotool key super+Right
+
+
+gesture swipe right_up xdotool key control+shift+T
+gesture swipe left_down xdotool key control+F4
+
+
+gesture pinch clockwise grabc
+gesture pinch anticlockwise grabc
+```
 

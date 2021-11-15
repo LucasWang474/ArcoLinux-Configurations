@@ -2,6 +2,8 @@
 
 ## grab color
 
+> Update: 这个功能在 `arcolinux_repo_3party/flameshot-git` 已有。
+
 ```bash
 sudo pacman -S xcolor
 ```

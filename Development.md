@@ -11,7 +11,18 @@ npm install -g sass less
 
 
 
-### prettier
+## Node.js
+
+```bash
+# sudo pacman -S nodejs
+sudo pacman -S nodejs-lts-gallium
+```
+
+
+
+
+
+## prettier
 
 ```bash
 sudo pacman -S prettier

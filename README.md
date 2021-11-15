@@ -342,7 +342,10 @@ sudo pacman -S sublime-text-4
 ### 安装浏览器
 
 ```bash
-sudo pacman -S google-chrome brave-bin
+sudo pacman -S google-chrome ublock-origin
+sudo pacman -S chromium chromium-ublock-origin-git
+
+# sudo pacman -S brave-bin
 ```
 
 
