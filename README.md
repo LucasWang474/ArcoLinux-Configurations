@@ -64,6 +64,12 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 # 安装 ArcoLinux-i3wm 之后的配置
 
+## 前言
+
+**Linux 桌面端的稳定性极大程度取决于用户的 Linux 知识水平，解决问题能力和搜索能力。**
+
+Linux 知识水平可以通过在 YouTube 上看相关视频和看书解决，而解决问题的能力通过 Google, ArchLinux Wiki 和 StackOverflow 就能极快地提高。希望 Linux 用户们学会使用搜索引擎和查看 Arch Wiki，特别是 Arch Wiki。
+
 更多配置可以看 [Configurations.,d](./Configurations.md) 和 [Tricks.md](./Tricks.md).
 
 ## 预览
@@ -518,7 +524,7 @@ mkdir ~/Downloads/XunleiDownloads # 然后在迅雷中设置默认下载位置
 对于在中文环境下使用 zip 压缩的文件，在 Linux 下解压可能会出现乱码的情况。下面介绍解决方案，更多请参考[官方文档](https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#zip_%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B9%B1%E7%A0%81)。
 
 ```bash
-yay -S unzip-iconv
+yay -S unzip-natspec
 
 # 然后使用下面这条指令来解压
 unzip -O gbk ARCHIVE_NAME.zip
