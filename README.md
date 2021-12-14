@@ -491,6 +491,17 @@ mkdir ~/Downloads/BaidunetdiskDownloads # 然后在百度网盘中设置默认�
 baidunetdisk --force-device-scale-factor=1.75
 ```
 
+永久更改 baidunetdisk 的 zoom level:
+
+```bash
+sudo vim /usr/bin/baidunetdisk
+```
+
+```bash
+#!/bin/sh
+LD_PRELOAD="/usr/lib/baidunetdisk/libbrowserengine.so:/usr/lib/baidunetdisk/libkernel.so" exec electron9 /usr/lib/baidunetdisk/resources/app.asar "$@" --force-device-scale-factor=1.75
+```
+
 
 
 #### 迅雷
