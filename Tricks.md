@@ -120,3 +120,13 @@ echo Linux | base64 # Output: TGludXgK
 echo TGludXgK | base64 --decode # Output: Linux
 ```
 
+
+
+
+
+## Code Rain
+
+```bash
+sudo pacman -S cxxmatrix-git
+```
+

@@ -484,7 +484,14 @@ yay -S baidunetdisk-electron
 mkdir ~/Downloads/BaidunetdiskDownloads # 然后在百度网盘中设置默认下载位置
 ```
 
-小提示：可以使用 Ctrl+-/= 来放大缩小。
+改变任意 electron 软件的 zoom level 的方法：
+
+```bash
+# 以 baidunetdisk 为例，在后面加上 --force-device-scale-factor=ZOOM_LEVEL 就行了
+baidunetdisk --force-device-scale-factor=1.75
+```
+
+
 
 #### 迅雷
 
