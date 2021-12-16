@@ -94,12 +94,36 @@ DefaultTimeoutStopSec=5s
 
 
 
+## 系统备份
+
+```bash
+sudo pacman -S timeshift timeshift-autosnap
+```
+
+
+
+
+
 ## 电源管理
 
 ```bash
 sudo pacman -S tlp powertop
 sudo systemctl enable tlp
 ```
+
+
+
+## System Monitor
+
+```bash
+# Press ? to see all available commands
+sudo pacman -S htop
+
+# All information in one, pretty neat
+sudo pacman -S bpytop
+```
+
+
 
 
 
@@ -738,6 +762,13 @@ sudo pacman -S losslesscut-bin
 ```bash
 $ groups
 sys network scanner power autologin rfkill users video storage optical lp input audio wheel lucas
+```
+
+```bash
+# 通过 usermod 添加
+# usermod -a -G group1,group2 user
+sudo usermod -a -G input lucas
+reboot
 ```
 
 安装 `libinput-gestures`:

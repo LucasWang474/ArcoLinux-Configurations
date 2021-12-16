@@ -213,6 +213,10 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 > - **dmenu 更轻量**
 > - **uTools 功能更丰富**
 
+```bash
+yay -S rofi utools
+```
+
 rofi 是一个软件启动器，对于新手可以先**暂时使用 rofi**，之后尝试 dmenu 和 uTools。
 
 打开 i3 config，找到下面一行：
@@ -482,6 +486,14 @@ cp -r Dotfiles/.config/i3 ~/.config
 
 ### 下载软件
 
+#### 命令行
+
+```bash
+sudo pacman -S wget
+```
+
+
+
 #### 百度网盘
 
 ```bash
@@ -510,12 +522,27 @@ LD_PRELOAD="/usr/lib/baidunetdisk/libbrowserengine.so:/usr/lib/baidunetdisk/libk
 
 
 
-#### 迅雷
+#### BT
 
 ```bash
-yay -S xunlei-bin
-mkdir ~/Downloads/XunleiDownloads # 然后在迅雷中设置默认下载位置
+yay -S qbittorrent-enhanced-git
 ```
+
+
+
+
+
+#### 通用
+
+- 直接浏览器下载
+
+- 或者用 uget
+
+  ```bash
+  sudo pacman -S uget
+  ```
+
+  
 
 
 
@@ -587,6 +614,8 @@ yay -S masterpdfeditor-free
 sudo pacman -S typora
 
 yay -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
+
+sudo pacman -S obsidian
 ```
 
 
@@ -595,8 +624,6 @@ yay -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
 
 
 ```bash
-# yay -S onlyoffice
-
 # wps-office-cn 有点双标恶心人，我选择不用
 yay -S wps-office wps-office-mime ttf-wps-fonts ttf-ms-fonts
 ```
@@ -826,7 +853,8 @@ vim .gitconfig
 ```
 
 ```bash
-
+[http]
+    proxy = http://127.0.0.1:1081
 ```
 
 
@@ -836,10 +864,12 @@ vim .gitconfig
 ```bash
 sudo pacman -S jdk8-openjdk openjdk8-doc
 sudo pacman -S jdk11-openjdk openjdk11-doc
-sudo pacman -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
+sudo pacman -S jdk-openjdk 
+yay -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
 
-# sudo pacman -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
+yay -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
 sudo pacman -S webstorm webstorm-jre npm 
+yay -S pycharm-professional python-coverage python-pytest python-tox
 ```
 
 #### Intellij Plugins
@@ -849,7 +879,7 @@ sudo pacman -S webstorm webstorm-jre npm
   - Atom Material Icons
   - Material Theme UI
 - Choose Runtime
-- IDE Eval Reset
+- IDE Eval Reset, [破解](https://www.exception.site/essay/how-to-free-use-intellij-idea-2019-3)
 
 #### Set default Java environment
 
@@ -937,3 +967,10 @@ sudo pacman -S catfish
 sudo pacman -S meld
 ```
 
+### KDE Connect
+
+```bash
+sudo pacman -S kdeconnect sshfs 
+```
+
+如果想要在 PC 和 Phone 之间共享文件，你想需要分别在各端**明确设定文件保存地址**。
