@@ -125,6 +125,14 @@ sudo pacman -S bpytop
 
 
 
+## Benchmark
+
+```bash
+hardinfo
+```
+
+
+
 
 
 ## SSD
@@ -406,7 +414,7 @@ DPI 默认数值为 96。如果我想要 1.15 倍缩放，那么 DPI 的数值�
 
 ## 设置主题
 
-可以通过 lxappearance 设置。
+GTK 通过 lxappearance 设置，QT 通过 qt5ct 和 kvantummanager 设置。
 
 ### 解决 lxappearance 无法更改 Mouse Cursor
 

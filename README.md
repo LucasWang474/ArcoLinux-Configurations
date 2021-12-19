@@ -435,6 +435,19 @@ exec --no-startup-id ~/.config/qv2ray/init.sh
 
 
 
+#### clash
+
+```bash
+# 没错，这个包名就是这么脑残。
+# 如果不是我仔细看了那一列软件列表，我可能永远都不知道 clash-for-windows-bin 有 linux 版本
+yay -S clash-for-windows-bin
+sudo ln -s /usr/bin/cfw /usr/bin/clash-for-windows
+```
+
+
+
+
+
 #### SwitchyOmega
 
 Google Chrome 无法直接设置代理，而是依赖于系统的代理。我们可以使用 SwitchyOmega 完成浏览器的代理配置。
@@ -531,6 +544,16 @@ sudo vim /usr/bin/baidunetdisk
 LD_PRELOAD="/usr/lib/baidunetdisk/libbrowserengine.so:/usr/lib/baidunetdisk/libkernel.so" exec electron9 /usr/lib/baidunetdisk/resources/app.asar "$@" --force-device-scale-factor=1.75
 ```
 
+#### 阿里云盘
+
+```bash
+yay -S aliyunpan-liupan1890
+
+aliyunpan-liupan1890 --force-device-scale-factor=1.5
+```
+
+
+
 
 
 #### BT
@@ -551,6 +574,12 @@ yay -S qbittorrent-enhanced-git
 
   ```bash
   sudo pacman -S uget
+  ```
+
+- xunlei
+
+  ```bash
+  yay -S xunlei-bin
   ```
 
   
@@ -978,10 +1007,25 @@ sudo pacman -S catfish
 sudo pacman -S meld
 ```
 
-### KDE Connect
+### File Share
+
+#### nitroshare
+
+```bash
+sudo pacman -S nitroshare
+```
+
+#### KDE Connect
 
 ```bash
 sudo pacman -S kdeconnect sshfs 
 ```
 
 如果想要在 PC 和 Phone 之间共享文件，你想需要分别在各端**明确设定文件保存地址**。
+
+### Make Windows Bootable USB
+
+```bash
+sudo pacman -S woeusb
+```
+

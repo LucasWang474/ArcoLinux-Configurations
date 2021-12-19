@@ -64,7 +64,7 @@ sudo pacman -S zeal
 
 **Problem:**
 
-Aur 中 uTools 的版本为 2.4.1，但是我想提前用 beta 2.5.0 版本。
+AUR 中 uTools 的版本为 2.4.1，但是我想提前用 beta 2.5.0 版本。
 
 **Solution:**
 

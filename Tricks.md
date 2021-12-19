@@ -37,6 +37,7 @@ find -maxdepth 3 -type f -exec mediainfo --Inform="General;%Duration%" "{}" \; 2
 ## Reset password lock
 
 ```bash
+su
 faillock --user lucas --reset
 ```
 
@@ -89,6 +90,19 @@ sudo pacman -S htop
 ```
 
 In htop, press `?` to see all available commands.
+
+
+
+## Merge PDF
+
+```bash
+tldr gs
+
+
+gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=output.pdf input1.pdf input2.pdf
+```
+
+
 
 
 
