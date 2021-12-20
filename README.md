@@ -111,6 +111,25 @@ Linux 知识水平可以通过在 YouTube 上看相关视频和看书解决，�
 
 ## 搭建基础环境
 
+### tldr
+
+```bash
+# 史上最好用的命令：tldr
+# 哪里不会点哪里，妈妈再也不用担心我不会用命令也不敢用 man 看文档了
+# 唯一缺点：不代理第一次查询速度很慢，很可能查询失败
+```
+
+```bash
+# 例
+# 开启代理，具体端口号取决于你的代理软件的配置
+export http_proxy=http://127.0.0.1:1081/; export https_proxy=$http_proxy;
+
+# 查询 reflector 怎么用
+tldr reflector
+```
+
+![image-20211220135542999](README.assets/image-20211220135542999.png)
+
 ### 更新系统
 
 自动生成中国源：
