@@ -611,6 +611,94 @@ mainMem.partialLazyRestore = "FALSE"
 
 <br>
 
+### Arch Linux as a guest
+
+If you are installing Arch Linux as a virtual machine,
+
+```bash
+sudo pacman -S open-vm-tools
+
+# Service responsible for the Virtual Machine status report.
+sudo systemctl enable vmtoolsd.service 
+
+# Filesystem utility. Enables drag & drop functionality between host and guest through FUSE (Filesystem in Userspace).
+sudo systemctl enable vmware-vmblock-fuse.service 
+```
+
+For more, read https://wiki.archlinux.org/title/VMware/Install_Arch_Linux_as_a_guest#Open-VM-Tools
+
+
+
+#### Fix `drag and drop` and `copy and paste` not working
+
+Try running:
+
+```bash
+vmware-user # Tool to enable clipboard sharing (copy/paste) between host and guest.
+vmware-vmblock-fuse # Filesystem utility. Enables drag & drop functionality between host and guest through FUSE
+```
+
+To make this permanent
+
+```bash
+echo "vmware-user &" >> ~/.xprofile
+echo "vmware-vmblock-fuse &" >> ~/.xprofile
+```
+
+
+
+
+
+#### Setup Shared Folder
+
+- `vmhgfs-fuse` - Utility for mounting vmhgfs shared folders.
+
+Share a folder by selecting *Edit virtual machine settings > Options > Shared Folders > Always enabled*, and creating a new share.
+
+The shared folders should be visible with:
+
+```bash
+vmware-hgfsclient
+```
+
+Now the folder can be mounted:
+
+```bash
+mkdir <shared folders root directory>
+vmhgfs-fuse -o allow_other -o auto_unmount .host:/<shared_folder> <shared folders root directory>
+```
+
+Example:
+
+```bash
+mkdir $HOME/SHARED
+vmhgfs-fuse -o allow_other -o auto_unmount .host:/D $HOME/SHARED
+```
+
+
+
+##### fstab
+
+Add a rule for each share:
+
+```bash
+sudo echo '.host:/<shared_folder> <shared folders root directory> fuse.vmhgfs-fuse nofail,allow_other 0 0' >> /etc/fstab
+```
+
+Example:
+
+```bash
+sudo echo '.host:/D $HOME/SHARED fuse.vmhgfs-fuse nofail,allow_other 0 0' >> /etc/fstab
+```
+
+
+
+
+
+<br>
+
+<br>
+
 ## KVM
 
 经过一番折腾，并没有发现 KVM 有多明显的性能提升，反而不能或很难设置一些效率工具，例如共享文件夹、共享复制剪切板、拖拽文件、自动适应窗口等。因此，KVM 方面的折腾暂时只能作罢了。

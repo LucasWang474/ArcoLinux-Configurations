@@ -244,10 +244,12 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 > - **uTools 功能更丰富**
 
 ```bash
-yay -S rofi utools
+yay -S rofi
+
+yay -S utools
 ```
 
-rofi 是一个软件启动器，对于新手可以先**暂时使用 rofi**，之后尝试 dmenu 和 uTools。
+rofi 是一个软件启动器。
 
 打开 i3 config，找到下面一行：
 
