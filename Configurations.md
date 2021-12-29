@@ -437,6 +437,8 @@ gtk-cursor-theme-name=Bibata-Modern-Amber
 
 
 
+
+
 ## Dracula color theme
 
 > https://draculatheme.com/

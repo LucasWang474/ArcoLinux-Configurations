@@ -656,7 +656,13 @@ export QT_SCALE_FACTOR=1.4
 #### 阅读器
 
 ```bash
-sudo pacman -S okular # 建议自己设置快捷键，
+# 简单编辑，建议自己设置快捷键
+sudo pacman -S okular 
+# okular 需要下面的 icon theme，Papirus-Dark 在 QT Dark 模式下显示的最好
+sudo pacman -S breeze-icons papirus-icon-theme
+
+# 轻量阅读
+sudo pacman -S atril
 ```
 
 ![image-20210802190959620](README.assets/image-20210802190959620.png)
@@ -681,6 +687,16 @@ sudo pacman -S obsidian
 
 
 
+### 思维导图
+
+```bash
+yay -S xmind-2021
+```
+
+
+
+
+
 ### Office
 
 
@@ -690,12 +706,6 @@ yay -S wps-office wps-office-mime ttf-wps-fonts ttf-ms-fonts
 ```
 
 
-
-### 思维导图
-
-```bash
-yay -S xmind-2020
-```
 
 
 

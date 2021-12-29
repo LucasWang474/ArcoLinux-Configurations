@@ -6,16 +6,42 @@
 sudo pacman -S npm
 
 sudo su
-npm install -g sass less
+npm i -g sass less nodemon 
+
+
+# Update
+npm update
+npm update -g
 ```
+
+
+
+## MongoDB
+
+```bash
+yay -S mongodb-bin mongosh-bin # command line
+# Or install with npm (this may fail though)
+npm i -g mongosh
+
+
+yay -S studio-3t # GUI
+# 以特定 GTK THEME 运行 studio-3t，如 Arc-Darker
+GTK_THEME=Arc-Daker studio-3t 
+
+
+# 在对应开发文件夹下：
+npm i mongoose
+```
+
+
 
 
 
 ## Node.js
 
 ```bash
-# sudo pacman -S nodejs
-sudo pacman -S nodejs-lts-gallium
+sudo pacman -S nodejs
+# sudo pacman -S nodejs-lts-gallium
 ```
 
 

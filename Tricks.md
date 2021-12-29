@@ -19,7 +19,6 @@ sleep 1h && mpv ~/Music/FILE
 ```
 
 
-
 ## Video duration
 
 ```bash
