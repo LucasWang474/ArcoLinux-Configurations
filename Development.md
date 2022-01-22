@@ -1,18 +1,65 @@
 # Front-end
 
+## pacman
+
+```bash
+sudo pacman -S babel-cli babel-core
+sudo pacman -S browserify
+```
+
+
+
+## Node.js
+
+```bash
+sudo pacman -S nodejs
+# sudo pacman -S nodejs-lts-gallium
+```
+
+
+
 ## npm
 
 ```bash
 sudo pacman -S npm
 
+# Global
 sudo su
-npm i -g sass less nodemon 
+npm i -g sass less 
+npm i -g nodemon json-server
+
+# Local
+npm i express
+npm i webpack@4 webpack-cli@3 --save-dev
 
 
 # Update
 npm update
 npm update -g
 ```
+
+
+
+
+
+## webpack
+
+### Installation
+
+> - https://webpack.js.org/guides/installation/
+
+```bash
+# Global
+# npm i -g webpack@4 webpack-cli@3
+npm i -g webpack webpack-cli
+
+# Local
+npm i -D webpack webpack-cli
+```
+
+
+
+
 
 
 
@@ -35,23 +82,22 @@ npm i mongoose
 
 
 
-
-
-## Node.js
+## prettier
 
 ```bash
-sudo pacman -S nodejs
-# sudo pacman -S nodejs-lts-gallium
+sudo pacman -S prettier
 ```
 
 
 
 
 
-## prettier
+# Back-end
+
+## postman
 
 ```bash
-sudo pacman -S prettier
+yay -S postman-bin
 ```
 
 

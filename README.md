@@ -690,7 +690,7 @@ sudo pacman -S obsidian
 ### 思维导图
 
 ```bash
-yay -S xmind-2021
+yay -S xmind-bin
 ```
 
 
@@ -938,19 +938,17 @@ sudo pacman -S jdk11-openjdk openjdk11-doc
 sudo pacman -S jdk-openjdk 
 yay -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
 
+# 装一个 intellij 就行了
 yay -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
-sudo pacman -S webstorm webstorm-jre npm 
-yay -S pycharm-professional python-coverage python-pytest python-tox
+# sudo pacman -S webstorm webstorm-jre npm 
+# yay -S pycharm-professional python-coverage python-pytest python-tox
 ```
 
 #### Intellij Plugins
 
 - Theming
-  - Dracula Theme
   - Atom Material Icons
-  - Material Theme UI
-- Choose Runtime
-- IDE Eval Reset, [破解](https://www.exception.site/essay/how-to-free-use-intellij-idea-2019-3)
+  - Material Theme UI ( I prefer Dracula)
 
 #### Set default Java environment
 
@@ -965,9 +963,7 @@ sudo archlinux-java set java-11-openjdk
 yay -S jdk11-jetbrains-imfix
 ```
 
-进入 pycharm 或 idea，安装 Choose Runtimes 插件。
-
-然后 Ctrl + Shift + A 搜索 Choose，选择 `Choose Runtimes...`，再选择。
+进入 idea，Ctrl + Shift + A 搜索 `Choose Runtime`，选择 `Choose Runtimes...`，再选择。
 
 然后选择 `build 11.0.11+9-b1504.5 [Local /usr/lib/jvm/java-11-jetbrains]`。
 
@@ -1049,6 +1045,7 @@ sudo pacman -S nitroshare
 #### KDE Connect
 
 ```bash
+# 局域网文件互传，远程控制（如从手机端复制文本到电脑端）
 sudo pacman -S kdeconnect sshfs 
 ```
 

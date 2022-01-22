@@ -287,7 +287,7 @@ sudo pacman -S libva-mesa-driver mesa-vdpau
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji
 sudo pacman -S ttf-font-awesome
 sudo pacman -S ttf-cascadia-code
-yay -S consolas-font
+yay -S ttf-windows
 
 sudo pacman -S font-manager
 ```
