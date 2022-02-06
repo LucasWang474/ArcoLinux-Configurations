@@ -160,3 +160,24 @@ ls -a1
 # 最后安装就行了
 sudo pacman -U utools-2.5.0-1-x86_64.pkg.tar.zst
 ```
+
+### Reset to old versions
+
+如果你想要将软件降级为低版本的，方法类似：
+
+```bash
+# 首先克隆
+git clone https://aur.archlinux.org/utools.git
+cd utools
+
+# 然后 git log 找到对应的 commit code
+# 然后 git reset --hard COMMIT_CODE
+git reset --hard COMMIT_CODE
+
+# 然后 makepkg 并忽略 checksums
+makepkg --skipchecksums 
+
+# 最后安装就行了
+sudo pacman -U ???.pkg.tar.zst
+```
+
