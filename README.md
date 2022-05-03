@@ -402,6 +402,15 @@ sudo pacman -S chromium chromium-ublock-origin-git
 
 ### 安装网络代理软件
 
+#### clash-for-windows (推荐)
+
+```bash
+yay -S clash-for-windows-electron-bin
+sudo ln -s /usr/bin/cfw /usr/bin/clash-for-windows
+```
+
+<br>
+
 #### v2ray + v2raya
 
 ```bash
@@ -416,66 +425,29 @@ exec --no-startup-id v2raya --passcheckroot --config ~/.config/v2raya
 
 <br>
 
-#### v2ray + qv2ray [deprecated]
-
-```bash
-sudo pacman -S v2ray qv2ray
-```
-
-在 i3 config 中设置 qv2ray 自启动：
-
-```bash
-# Proxy
-exec --no-startup-id qv2ray
-```
-
-qv2ray 在重新登录之后会出 bug，无法正常启动，可以创建下面的脚本：
-
-```bash
-touch ~/.config/qv2ray/init.sh
-chmod u+x ~/.config/qv2ray/init.sh
-vim ~/.config/qv2ray/init.sh
-```
-
-```bash
-#!/bin/bash
-
-killall qv2ray
-kill qv2ray
-sleep 2
-exec qv2ray
-```
-
-然后将上面的脚本放入 i3 config 中，并注释之前的自启动代码：
-
-```bash
-# Proxy
-# exec --no-startup-id qv2ray
-exec --no-startup-id ~/.config/qv2ray/init.sh
-```
 
 
-
-#### clash
-
-```bash
-# 没错，这个包名就是这么脑残。
-# 如果不是我仔细看了那一列软件列表，我可能永远都不知道 clash-for-windows-bin 有 linux 版本
-yay -S clash-for-windows-bin
-sudo ln -s /usr/bin/cfw /usr/bin/clash-for-windows
-```
-
-
-
-
-
-#### SwitchyOmega
+#### SwitchyOmega (重要)
 
 Google Chrome 无法直接设置代理，而是依赖于系统的代理。我们可以使用 SwitchyOmega 完成浏览器的代理配置。
 
-下载链接：https://github.com/FelisCatus/SwitchyOmega/releases/download/v2.5.20/SwitchyOmega_Chromium.crx
+命令行代理打开 `google-chrome-stable` 步骤：
 
-然后将下载好的文件的 crx 后缀改为 zip，再在 Google Chrome 中打开 chrome://extensions/，开启 Developer mode，将 zip 文件拖入即可完成安装。
+- 打开终端，配置代理，然后在终端中打开 `google-chrome-stable`
+
+  ```bash
+  # 前提条件是你已经打开了代理软件，如 clash-for-windows, v2rayA, qv2ray 等
+  # 下面的 1081 取决你的软件的配置
+  export http_proxy=http://127.0.0.1:1081/; export https_proxy=$http_proxy;
+  
+  # wget 多测试几下
+  wget google.com
+  
+  # 然后运行
+  google-chrome-stable
+  ```
+
+- 安装插件：https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en
 
 <br>
 
@@ -519,6 +491,8 @@ i3wm 配置文件本身就很容易阅读，强烈推荐看看我的配置文件
 Tip: 修改之后按 Mod+Shift+R 重启 i3wm，如果报错则说明你语法错了。
 
 ```bash
+# 不要直接复制我的 config 文件，建议先看看里面有什么
+# 如果你直接复制然后重启 i3wm，100% 会不适应你的系统
 git clone https://github.com/LucasWang474/Dotfiles.git
 cp -r Dotfiles/.config/i3 ~/.config
 ```
@@ -572,18 +546,6 @@ yay -S aliyunpan-liupan1890
 
 aliyunpan-liupan1890 --force-device-scale-factor=1.5
 ```
-
-
-
-
-
-#### BT
-
-```bash
-yay -S qbittorrent-enhanced-git
-```
-
-
 
 
 
@@ -678,7 +640,7 @@ yay -S masterpdfeditor-free
 ### Markdown
 
 ```bash
-sudo pacman -S typora
+paru -S typora-free
 
 yay -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
 
@@ -690,7 +652,7 @@ sudo pacman -S obsidian
 ### 思维导图
 
 ```bash
-yay -S xmind-bin
+yay -S xmind
 ```
 
 
@@ -729,6 +691,7 @@ sudo pacman -S screenkey # print keys on the screen as you are entering
 ### 截图
 
 ```bash
+# Linux 下最好用的截图软件
 sudo pacman -S flameshot
 ```
 
@@ -797,7 +760,7 @@ yay -S anki-git
 ### Goldendict
 
 ```bash
-sudo pacman -S goldendict hunspell hunspell-en_US
+sudo pacman -S goldendict-git hunspell hunspell-en_US
 ```
 
 下载词典：https://freemdict.com/category/%e8%8b%b1%e8%af%ad/

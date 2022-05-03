@@ -102,7 +102,27 @@ yay -S postman-bin
 
 
 
+## Reverse Proxy
 
+### natapp
+
+```bash
+paru -S natapp
+```
+
+查看自己的隧道的 `authtoken`: https://natapp.cn/tunnel/lists
+
+假设我的  authtoken 为 `123456789`，本地服务器（如用 `express` 搭建的服务器）监听了 `5000` 端口，启动 `natapp` 服务：
+
+```bash
+natapp -authtoken=123456789
+```
+
+Output:
+
+![image-20220206172747962](Development.assets/image-20220206172747962.png)
+
+然后通过  http://uwnug5.natappfree.cc 访问你的网站。
 
 
 
