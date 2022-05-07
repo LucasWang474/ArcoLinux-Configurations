@@ -384,7 +384,9 @@ sudo pacman -S font-manager
 
 
 
-## DPI
+## HIDPI
+
+### `.Xresources`
 
 > https://wiki.archlinux.org/title/HiDPI
 
@@ -409,6 +411,39 @@ Xft.rgba: rgb
 ```
 
 DPI 默认数值为 96。如果我想要 1.15 倍缩放，那么 DPI 的数值就是 96 * 1.15 = 110。
+
+### GTK2
+
+```bash
+```
+
+
+
+### GTK3
+
+```bash
+# 借助 GDK_SCALE
+export GDK_SCALE=2
+```
+
+### QT
+
+```bash
+# 借助 QT_SCALE_FACTOR 来运行软件
+QT_SCALE_FACTOR=1.25 wemeet
+QT_SCALE_FACTOR=1.5 feeluown
+```
+
+### Electron
+
+```bash
+# 借助 --force-device-scale-factor
+feishu --force-device-scale-factor=1.5
+```
+
+
+
+
 
 
 
