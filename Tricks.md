@@ -116,7 +116,7 @@ gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=output.pdf input1.pdf input2
 > Update: 这个功能在 `arcolinux_repo_3party/flameshot-git` 已有。
 
 ```bash
-sudo pacman -Ssudo pacman -S xcolor xcolor
+sudo pacman -S xcolor xcolor
 ```
 
 i3 config:

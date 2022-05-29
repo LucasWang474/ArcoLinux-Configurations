@@ -201,3 +201,16 @@ makepkg --skipchecksums
 sudo pacman -U ???.pkg.tar.zst
 ```
 
+
+
+
+
+## Install packages from `.deb` file
+
+```bash
+# Step 1
+debtap name.deb
+# Step 2
+sudo pacman -U xxx.pkg.tar.zst
+```
+
