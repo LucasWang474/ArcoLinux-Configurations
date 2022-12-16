@@ -12,7 +12,7 @@ Table of Contents
    * [搭建基础环境](#搭建基础环境)
       * [更新系统](#更新系统)
       * [安装 fish](#安装-fish)
-      * [使用 Xfce4-terminal](#使用-xfce4-terminal)
+      * [使用 xfce4-terminal](#使用-xfce4-terminal)
       * [设置 Rofi](#设置-rofi)
       * [设置亮度](#设置亮度)
          * [通过 xfce4-power-manager-settings](#通过-xfce4-power-manager-settings)
@@ -81,7 +81,7 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 Linux 知识水平可以通过在 YouTube 上看相关视频和看书解决，而解决问题的能力通过 Google, ArchLinux Wiki 和 StackOverflow 就能极快地提高。希望 Linux 用户们学会使用搜索引擎和查看 Arch Wiki，特别是 Arch Wiki。
 
-更多配置可以看 [Configurations.,d](./Configurations.md) 和 [Tricks.md](./Tricks.md).
+更多配置可以看 [Configurations.d](./Configurations.md) 和 [Tricks.md](./Tricks.md).
 
 ## 预览
 
@@ -144,6 +144,8 @@ sudo reflector -c China --save /etc/pacman.d/mirrorlist --sort rate
 cat /etc/pacman.d/mirrorlist
 ```
 
+> 如果发现生成的（中国）源的数目不符合预期，可以去官网手动生成：https://archlinux.org/mirrorlist/
+
 刷新
 
 ```bash
@@ -169,7 +171,7 @@ sudo pacman -Syy
 sudo pacman -S archlinuxcn-keyring
 ```
 
-接下來你就可以使用 [yay](https://github.com/Jguer/yay) 了。
+接下来你就可以使用 [paru](https://github.com/Morganamilo/paru) 了。
 
 最后更新系统：
 
@@ -179,6 +181,29 @@ reboot
 ```
 
 如果在关机界面卡死了，直接断电就行了。关于这方面的配置可以看我的 [Configurations.md](Configurations.md)。
+
+> 如果中途遇到 `ERROR: ??? could not be locally signed` 的问题：
+>
+> 解决方案 1：
+>
+> ```bash
+> su
+> rm -fr /etc/pacman.d/gnupg
+> pacman-key --init
+> pacman-key --populate archlinux
+> pacman-key --populate arcolinux
+> pacman-key --populate archlinuxcn # 这一步前提是你已经安装过了 archlinuxcn-keyring
+> ```
+>
+> 解决方案 2：（临时）
+>
+> ```bash
+> # 首先编辑 /etc/pacman.conf
+> sudo vim /etc/pacman.conf
+> 
+> # 然后设置 SigLevel = Never
+> # 临时避免签名问题，但是记得更新完系统之后把 SigLevel 恢复到原来的默认值
+> ```
 
 <br>
 
@@ -199,9 +224,9 @@ chsh -s /bin/fish # 更换当前用户默认的 shell 为 fish
 
 
 
-### 使用 Xfce4-terminal
+### 使用 xfce4-terminal
 
-目前 Arcolinux 默认使用的是 terminal 终端，但它使用起来依然不够无脑，因此我推荐使用已经预装好的 Xfce4-terminal。
+目前 ArcoLinux 默认使用的是 terminal 终端，但它使用起来依然不够无脑，因此我推荐使用已经预装好的 xfce4-terminal。
 
 首先打开 i3 config 文件。
 
@@ -230,13 +255,13 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 # bindsym control+mod1+KP_Enter exec --no-startup-id termite; focus
 ```
 
-然后 `Mod+Shift+R` 重启 i3。此时按下 `Mod+Enter` 即可启动 Xfce4-terminal，右键选择 Preferences 即可设置。
+然后 `Mod+Shift+R` 重启 i3。此时按下 `Mod+Enter` 即可启动 xfce4-terminal，右键选择 Preferences 即可设置。
 
 小提示：你也可以按 F12 启动 drop-down xfce4-terminal。
 
 
 
-### 设置 Rofi
+### 设置 rofi
 
 > **更新：**
 >
@@ -244,9 +269,9 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 > - **uTools 功能更丰富**
 
 ```bash
-yay -S rofi
+paru -S rofi
 
-yay -S utools
+paru -S utools
 ```
 
 rofi 是一个软件启动器。
@@ -260,12 +285,19 @@ bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 13"
 将其更改为：
 
 ```bash
-bindsym $mod+d exec --no-startup-id rofi -show run -font "Noto Sans 13"
+# -combi-modi window,drun,ssh
+# bindsym $mod+d exec --no-startup-id rofi -font "Noto Sans 20" -show-icons -icon-theme "Papirus" -combi-modi run -show combi
+bindsym $mod+d exec --no-startup-id rofi -font "Noto Sans 20" -show-icons -icon-theme "Papirus" -combi-modi run -show run
 ```
 
 然后重启 i3。试试 `Mod+d` 启动 rofi。
 
 小提示：你可以使用 rofi-theme-selector 来选择 rofi 主题。
+
+> rofi 的功能十分强大，没时间折腾了，参考：
+>
+> - https://wiki.archlinux.org/title/rofi
+> - https://github.com/davatorium/rofi
 
 
 
@@ -345,7 +377,7 @@ vim ~/.xprofile
 GTK_IM_MODULE DEFAULT=fcitx
 QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=@im=fcitx
-INPUT_METHOD  DEFAULT=fcit
+INPUT_METHOD  DEFAULT=fcitx
 ```
 
 然后打开 fcitx5-configtool，在 Input Method 中添加 pinyin。
@@ -369,10 +401,7 @@ INPUT_METHOD  DEFAULT=fcit
 ### 安装 VSCode
 
 ```bash
-sudo pacman -S visual-studio-code-bin
-
-
-sudo pacman -S sublime-text-4
+sudo paru -S visual-studio-code-bin
 ```
 
 然后安装 i3 语法高亮插件。之后就可以使用 VSCode 愉快地配置了。
@@ -405,7 +434,7 @@ sudo pacman -S chromium chromium-ublock-origin-git
 #### clash-for-windows (推荐)
 
 ```bash
-yay -S clash-for-windows-electron-bin
+paru -S clash-for-windows-electron-bin
 sudo ln -s /usr/bin/cfw /usr/bin/clash-for-windows
 ```
 
@@ -516,7 +545,7 @@ sudo pacman -S wget
 #### 百度网盘
 
 ```bash
-yay -S baidunetdisk-electron
+paru -S baidunetdisk-electron
 
 mkdir ~/Downloads/BaidunetdiskDownloads # 然后在百度网盘中设置默认下载位置
 ```
@@ -542,7 +571,7 @@ LD_PRELOAD="/usr/lib/baidunetdisk/libbrowserengine.so:/usr/lib/baidunetdisk/libk
 #### 阿里云盘
 
 ```bash
-yay -S aliyunpan-liupan1890
+paru -S aliyunpan-liupan1890
 
 aliyunpan-liupan1890 --force-device-scale-factor=1.5
 ```
@@ -562,7 +591,7 @@ aliyunpan-liupan1890 --force-device-scale-factor=1.5
 - xunlei
 
   ```bash
-  yay -S xunlei-bin
+  paru -S xunlei-bin
   ```
 
   
@@ -574,7 +603,7 @@ aliyunpan-liupan1890 --force-device-scale-factor=1.5
 对于在中文环境下使用 zip 压缩的文件，在 Linux 下解压可能会出现乱码的情况。下面介绍解决方案，更多请参考[官方文档](https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#zip_%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B9%B1%E7%A0%81)。
 
 ```bash
-yay -S unzip-natspec
+paru -S unzip-natspec
 
 # 然后使用下面这条指令来解压
 unzip -O gbk ARCHIVE_NAME.zip
@@ -597,7 +626,7 @@ sudo pacman -S netease-cloud-music
 # QQ, NeteaseClouseMusic, Kugou, Kuwo, Migu 等聚合版本
 # 优点：能免费听大部分歌，能同步各个平台的帐号及歌单
 # 缺点：不能下载，也不能从本地缓存中偷出来
-yay -S listen1-desktop-appimage
+paru -S listen1-desktop-appimage
 sudo ln /opt/appimages/listen1.AppImage /usr/bin/listen1
 ```
 
@@ -632,7 +661,7 @@ sudo pacman -S atril
 #### 编辑器
 
 ```bash
-yay -S masterpdfeditor-free
+paru -S masterpdfeditor-free
 ```
 
 
@@ -642,7 +671,7 @@ yay -S masterpdfeditor-free
 ```bash
 paru -S typora-free
 
-yay -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
+paru -S github-markdown-toc # Usage: gh-md-toc MARKDOWN_FILE.md
 
 sudo pacman -S obsidian
 ```
@@ -652,7 +681,7 @@ sudo pacman -S obsidian
 ### 思维导图
 
 ```bash
-yay -S xmind
+paru -S xmind
 ```
 
 
@@ -664,7 +693,7 @@ yay -S xmind
 
 ```bash
 # wps-office-cn 有点双标恶心人，我选择不用
-yay -S wps-office wps-office-mime ttf-wps-fonts ttf-ms-fonts
+paru -S wps-office wps-office-mime ttf-wps-fonts ttf-ms-fonts
 ```
 
 
@@ -752,7 +781,7 @@ sudo pacman -S telegram-desktop
 
 ```bash
 # sudo pacman -S anki
-yay -S anki-git
+paru -S anki-git
 ```
 
 
@@ -828,7 +857,7 @@ set noerrorbells
 set -U fish_greeting ""
 
 # 插件管理器
-yay -S fisher
+paru -S fisher
 
 # 配置 fish
 fish_config
@@ -899,12 +928,12 @@ vim .gitconfig
 sudo pacman -S jdk8-openjdk openjdk8-doc
 sudo pacman -S jdk11-openjdk openjdk11-doc
 sudo pacman -S jdk-openjdk 
-yay -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
+paru -S jdk11-jetbrains-imfix # 此版本可以正常使用输入法
 
 # 装一个 intellij 就行了
-yay -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
+paru -S intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
 # sudo pacman -S webstorm webstorm-jre npm 
-# yay -S pycharm-professional python-coverage python-pytest python-tox
+# paru -S pycharm-professional python-coverage python-pytest python-tox
 ```
 
 #### Intellij Plugins
@@ -923,7 +952,7 @@ sudo archlinux-java set java-11-openjdk
 #### 解决输入法位置 bug
 
 ```bash
-yay -S jdk11-jetbrains-imfix
+paru -S jdk11-jetbrains-imfix
 ```
 
 进入 idea，Ctrl + Shift + A 搜索 `Choose Runtime`，选择 `Choose Runtimes...`，再选择。

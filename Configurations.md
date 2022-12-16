@@ -152,7 +152,7 @@ sudo systemctl enable --now fstrim.timer
 # 清除未安装的 pacman 缓存
 sudo pacman -Sc 
 
-yay -Sc
+paru -Sc
 
 # 清除所有 pacman 缓存
 sudo pacman -Scc
@@ -287,7 +287,7 @@ sudo pacman -S libva-mesa-driver mesa-vdpau
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji
 sudo pacman -S ttf-font-awesome
 sudo pacman -S ttf-cascadia-code
-yay -S ttf-windows
+paru -S ttf-ms-win10-cdn-zh_cn
 
 sudo pacman -S font-manager
 ```
@@ -565,7 +565,7 @@ yay -S dracula-gtk-theme
 **First install vmware,**
 
 ```bash
-sudo pacman -S vmware-workstation
+sudo pacman -S vmware-workstation # 现在是 vmware 17 了
 ```
 
 **Then,** as desired, enable some of the following services:
@@ -591,15 +591,21 @@ sudo modprobe -a vmw_vmci vmmon
 **Lastly,** entering the Workstation Pro license key from a terminal:
 
 ```bash
-sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn 4A4RR-813DK-M81A9-4U35H-06KND
 ```
 
-**16.0 License Key**
+**17 License Key**
 
 ```bash
-ZF3R0-FHED2-M80TY-8QYGC-NPKYF
-YF390-0HF8P-M81RQ-2DXQE-M2UT6
-ZF71R-DMX85-08DQY-8YMNC-PPHV8
+4A4RR-813DK-M81A9-4U35H-06KND
+
+NZ4RR-FTK5H-H81C1-Q30QH-1V2LA
+
+JU090-6039P-08409-8J0QH-2YR7F
+
+4Y09U-AJK97-089Z0-A3054-83KLA
+
+4C21U-2KK9Q-M8130-4V2QH-CF810
 ```
 
 

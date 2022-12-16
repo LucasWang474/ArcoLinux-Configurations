@@ -51,7 +51,7 @@ See: https://github.com/joeyespo/grip#usage
 ```bash
 # https://github.com/joeyespo/grip
 # Preview GitHub Markdown files like Readme locally before committing them.
-yay -S python-grip-git
+paru -S python-grip-git
 
 grip README.md
 ```

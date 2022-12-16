@@ -66,7 +66,7 @@ npm i -D webpack webpack-cli
 ## MongoDB
 
 ```bash
-yay -S mongodb-bin mongosh-bin # command line
+paru -S mongodb-bin mongosh-bin # command line
 # Or install with npm (this may fail though)
 npm i -g mongosh
 
